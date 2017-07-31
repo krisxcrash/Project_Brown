@@ -43,7 +43,7 @@ $("#submit-button").on("click", function() {
     $('form').trigger("reset");
     // Toggles form by clicking "Search" panel header
     $(".toggle-form").click(function(){
-		$(".toggle-form").slideToggle("slow");
+		$(".toggle-form-container").slideToggle("slow");
 	});
 });
 
