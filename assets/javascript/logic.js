@@ -23,10 +23,9 @@ $("#submit-button").on("click", function() {
 	distanceSearch = parseInt($("#input-distance").val());
 	startDate = $("#input-start").val();
 	endDate = $("#input-end").val();
+
 	// Hides form panel on submission
 	$(".toggle-form-container").slideUp("slow");
-
-	console.log(distanceSearch);
 
 	// Converts time from our calendar to UTC
 	var convertedStart = moment.utc(startDate).format();
@@ -34,16 +33,53 @@ $("#submit-button").on("click", function() {
 
 	var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token=PBMOFDBNG7TPGBUP7OSZ" + "&q=" + generalSearch + "&location.address=" + locationSearch + "&location.within=" + distanceSearch+"mi" + "&start_date.range_start=" + convertedStart + "&start_date.range_end=" + convertedEnd;
 	$.ajax({
-        url: queryURL,
-        method: "GET"
-    }).done(function(response) {
-      	console.log(response);
-    });
+		url: queryURL,
+		method: "GET"
+		}).done(function(response) {
+			console.log(response);
+			var results = response.events;
+
+			for (var i = 0; i < results.length; i++) {
+
+				//variables for prepending to window
+				var eventTitle = results[i].name.text;
+				var eventDescription = results[i].description.text;
+				var startEvent = results[i].start.local;
+				var endEvent = results[i].end.local;
+				var eventImage = $("<img>");
+
+				//creates dynamic div for populating results
+				var eventDiv = $("<div class='item col-md-4 col-sm-6 event-list'>");
+
+				//prepends results to window
+				if (results[i].logo === null) {
+					eventDiv.append("<img src= https://placehold.it/400x200>");
+					eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
+					eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
+					eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
+					eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
+					$(".events").prepend(eventDiv);
+				};
+
+				else {
+				eventImage.attr("src", results[i].logo.url);
+				eventDiv.append(eventImage);
+				eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
+				eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
+				eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
+				eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
+				$(".events").prepend(eventDiv);
+				};
+			// console.log(response.location.augmented_location.city);
+			// console.log(results[i].venue.name);
+			};
+		});
+		
     // Clear form
     $('form').trigger("reset");
     // Toggles form by clicking "Search" panel header
     $(".toggle-form").click(function(){
-		$(".toggle-form-container").slideToggle("slow");
+		$(".toggle-form-container").slideDown("slow");
 	});
 });
 
