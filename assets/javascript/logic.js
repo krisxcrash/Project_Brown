@@ -59,7 +59,7 @@ $("#submit-button").on("click", function() {
 					eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
 					eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
 					$(".events").prepend(eventDiv);
-				};
+				}
 
 				else {
 				eventImage.attr("src", results[i].logo.url);
@@ -74,7 +74,7 @@ $("#submit-button").on("click", function() {
 			// console.log(results[i].venue.name);
 			};
 		});
-		
+
     // Clear form
     $('form').trigger("reset");
     // Toggles form by clicking "Search" panel header
