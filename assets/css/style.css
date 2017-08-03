@@ -1,68 +1,67 @@
 .h3-panel-header {
-	cursor: pointer;
-}
-
-center {
-background-color: #000;
+    cursor: pointer;
 }
 
 h3 {
-	color: #E3493B;
-	background-color: #f8f8f8;
-	font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-	font-weight: bolder;
+    color: #E3493B;
+    background-color: #f8f8f8;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: bolder;
     font-size: 20px;
 }
+
 .menu a {
-	color: #E3493B;
+    color: #E3493B;
 }
+
 .menu>li {
-	background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
 
 .thumbnail {
-	border: 1px solid #fff;
+    border: 1px solid #fff;
 }
+
 .button {
-	background-color: #EEBA4C;
+    background-color: #EEBA4C;
 }
 
 .button.small.expanded.hollow {
-	width: 40%;
-	position: relative;
-	margin-top: -100px;
+    width: 40%;
+    position: relative;
+    margin-top: -100px;
 }
 
 .button.hollow {
-	color: white;
-	border-color: gray;
+    color: white;
+    border-color: gray;
 }
+
 .button.expanded {
-	background-color: #f8f8f8;
-	color: #000;
+    background-color: #f8f8f8;
+    color: #000;
 }
 
 body {
-	background-color: #f8f8f8;
-	font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-
+    background-color: #f8f8f8;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .top-bar {
-	background-color: #f8f8f8;
-
+    background-color: #f8f8f8;
 }
+
 .callout.large {
-	margin-top: 150px;
-	background-color: #f8f8f8;
-	border-top: 5px solid #E3493B;;
-	color: #fff;
+    margin-top: 150px;
+    background-color: #f8f8f8;
+    border-top: 5px solid #E3493B;
+    ;
+    color: #fff;
 }
 
 
 .form-floating-label {
-  position: relative;
-  
+    position: relative;
 }
 
 .form-floating-label [type='text'],
@@ -80,146 +79,143 @@ body {
 .form-floating-label [type='url'],
 .form-floating-label [type='color'],
 .form-floating-label textarea {
-  margin-bottom: 0;
-  color: #8a8a8a;
-  font-size: 18px;
-  font-weight: 300;
-  padding: 30px 1rem 1rem 25px;
+    margin-bottom: 0;
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 30px 1rem 1rem 25px;
 }
 
 .form-floating-label label {
-  color: #E3493B;
-  font-size: 18px;
-  position: absolute;
-  pointer-events: none;
-  left: 25px;
-  bottom: 0;
-  transition: all 0.9s ease-in;
-  font-weight: 300;
+    color: #E3493B;
+    font-size: 18px;
+    position: absolute;
+    pointer-events: none;
+    left: 25px;
+    bottom: 0;
+    transition: all 0.9s ease-in;
+    font-weight: 300;
 }
 
-.form-floating-label textarea ~ label {
-  top: 20px;
-  font-size: 18px;
-  font-weight: 300;
+.form-floating-label textarea~label {
+    top: 20px;
+    font-size: 18px;
+    font-weight: 300;
 }
 
-.form-floating-label input:focus ~ label,
-.form-floating-label input:disabled[value] ~ label,
-.form-floating-label.has-value input ~ label {
-  top: 0;
-  font-size: 14px;
-  color: #E3493B;
-  font-weight: 400;
+.form-floating-label input:focus~label,
+.form-floating-label input:disabled[value]~label,
+.form-floating-label.has-value input~label {
+    top: 0;
+    font-size: 14px;
+    color: #E3493B;
+    font-weight: 400;
 }
 
-.form-floating-label textarea:focus ~ label,
-.form-floating-label.has-value textarea ~ label {
-  top: 0;
-  font-size: 14px;
-  color: #E3493B;
-  font-weight: 400;
+.form-floating-label textarea:focus~label,
+.form-floating-label.has-value textarea~label {
+    top: 0;
+    font-size: 14px;
+    color: #E3493B;
+    font-weight: 400;
 }
-
 
 .menu-hover-lines {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 1px;
-  transition: all 0.35s ease;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.35s ease;
 }
 
 .menu-hover-lines li a {
-  padding: 0.75rem 0;
-  color: #E3493B;
-  position: relative;
-  margin-left: 1rem;
+    padding: 0.75rem 0;
+    color: #E3493B;
+    position: relative;
+    margin-left: 1rem;
 }
 
 .menu-hover-lines li:first-child a {
-  margin-left: 0;
+    margin-left: 0;
 }
 
-.menu-hover-lines li.active > a {
-  background-color: transparent;
+.menu-hover-lines li.active>a {
+    background-color: transparent;
 }
 
 .menu-hover-lines a:before,
 .menu-hover-lines a::after {
-  height: 3px;
-  position: absolute;
-  content: '';
-  transition: all 0.35s ease;
-  background-color: #E3493B;
-  width: 0;
+    height: 3px;
+    position: absolute;
+    content: '';
+    transition: all 0.35s ease;
+    background-color: #E3493B;
+    width: 0;
 }
 
 .menu-hover-lines a::before {
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 }
 
 .menu-hover-lines a::after {
-  bottom: 0;
-  right: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .menu-hover-lines a:hover,
-.menu-hover-lines li.active > a {
-  color: #E3493B;
-  transition: all 0.35s ease;
+.menu-hover-lines li.active>a {
+    color: #E3493B;
+    transition: all 0.35s ease;
 }
 
 .menu-hover-lines a:hover::before,
 .menu-hover-lines .active a::before,
 .menu-hover-lines a:hover::after,
 .menu-hover-lines .active a::after {
-  width: 100%;
+    width: 100%;
 }
 
-
 .translucent-form-overlay {
-  max-width: 500px;
-  width: 100%;
-  float: right;
-  margin: 50px;
-  background-color: rgba(54, 54, 54, 0.8);
-  padding: 20px;
-  color: #fefefe;
-  position: relative;
-  margin-top: -425px;
+    max-width: 500px;
+    width: 100%;
+    float: right;
+    margin: 50px;
+    background-color: rgba(54, 54, 54, 0.8);
+    padding: 20px;
+    color: #fefefe;
+    position: relative;
+    margin-top: -425px;
 }
 
 .translucent-form-overlay .columns.row {
-  display: block;
+    display: block;
 }
 
-.translucent-form-overlay h3, .translucent-form-overlay label {
-  color: #fefefe;
+.translucent-form-overlay h3,
+.translucent-form-overlay label {
+    color: #fefefe;
 }
 
-.translucent-form-overlay input, .translucent-form-overlay select {
-  color: #8a8a8a;
+.translucent-form-overlay input,
+.translucent-form-overlay select {
+    color: #8a8a8a;
 }
 
 .translucent-form-overlay input::-webkit-input-placeholder {
-  color: #8a8a8a;
+    color: #8a8a8a;
 }
 
 .translucent-form-overlay input:-ms-input-placeholder {
-  color: #8a8a8a;
+    color: #8a8a8a;
 }
 
 .translucent-form-overlay input::placeholder {
-  color: #8a8a8a;
+    color: #8a8a8a;
 }
-
-
 
 #map {
     display: block;
     width: 50%;
     height: 300px;
 }
-
