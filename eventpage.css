@@ -1,0 +1,36 @@
+#mainImage {
+  width: 100%;
+}
+
+
+ {
+  background: url("https://i.ytimg.com/vi/0VnVRgCPawo/maxresdefault.jpg") top right no-repeat;
+  background-size: 650px, 400px,
+  /*background-size: cover;*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  }
+
+a  {
+  font-size: 20px;
+}
+
+#panel2-label {
+  font-size: 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+#eventInfo {
+  padding: 18px;
+}
+
+#twitterBtn {
+  margin-left: 132px;
+}
