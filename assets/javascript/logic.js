@@ -55,7 +55,12 @@ $("#submit-button").on("click", function() {
 
 				//creates dynamic div for populating results
 				var eventDiv = $("<div class='item col-md-4 col-sm-6 event-list'>");
-
+				// Uncomment for map
+				// $('#map').gmap3({
+				// 	address: venueAddress,
+				// 	zoom: 6,
+				// 	mapTypeId : google.maps.MapTypeId.ROADMAP
+				// });
 				//prepends results to window
 				if (results[i].logo === null) {
 					eventDiv.append("<img src= https://placehold.it/400x200>");
@@ -89,17 +94,10 @@ $("#submit-button").on("click", function() {
     // Clear form
     $('form').trigger("reset");
     // Toggles form by clicking "Search" panel header
-    $(".toggle-form").click(function(){
-		$(".toggle-form-container").slideDown("slow");
-	});
+ //    $(".toggle-form").click(function(){
+	// 	$(".toggle-form-container").slideDown("slow");
+	// });
 });
-
-// Calendar function for start/end dates
-// $(function() {
-// 	$("#input-start").datepicker();
-// 	$("#input-end").datepicker();
-// });
-
 
 $(function() {
 	var dateFormat = "mm/dd/yy",
@@ -131,3 +129,4 @@ $(function() {
 		return date;
 	}
 });
+

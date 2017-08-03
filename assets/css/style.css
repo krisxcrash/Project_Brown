@@ -1,3 +1,9 @@
 .h3-panel-header {
 	cursor: pointer;
 }
+
+#map {
+    display: block;
+    width: 50%;
+    height: 300px;
+}
