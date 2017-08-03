@@ -1,6 +1,7 @@
 .h3-panel-header {
 	cursor: pointer;
 }
+
 center {
 background-color: #000;
 }
@@ -212,5 +213,13 @@ body {
 
 .translucent-form-overlay input::placeholder {
   color: #8a8a8a;
+}
+
+
+
+#map {
+    display: block;
+    width: 50%;
+    height: 300px;
 }
 
