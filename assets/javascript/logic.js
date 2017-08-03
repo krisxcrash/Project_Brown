@@ -16,6 +16,8 @@ var distanceSearch = 0;
 var startDate = "";
 var endDate = "";
 
+
+
 $("#submit-button").on("click", function() {
 	event.preventDefault();
 	generalSearch = $("#input-general").val().trim();
@@ -38,6 +40,7 @@ $("#submit-button").on("click", function() {
 		}).done(function(response) {
 			console.log(response);
 			var results = response.events;
+			console.log(response.events)
 
 			for (var i = 0; i < results.length; i++) {
 
@@ -99,3 +102,5 @@ $(function() {
 	$("#input-start").datepicker();
 	$("#input-end").datepicker();
 });
+
+
