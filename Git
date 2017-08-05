@@ -1,0 +1,32 @@
+Working with get in a way that will prevent conflicts - Let’s get our code on the most recent version
+git checkout master
+git pull origin master
+
+Let’s switch to our custom branch
+git branch – shows branches
+git checkout <custombranch>
+git pull origin <custombranch>
+git merge master – always do before starting work on your branch to get it up to the latest and avoid conflicts
+git status – shows updates that have not been committed
+git add <new file name> or git add . – adds all files
+git commit -am "cr-101 added api calls to get images from gliphy"
+git push origin <custombranch>
+
+Before we merge our changes to master let’s get our code on the most recent version
+git checkout master
+git pull origin master
+git checkout <custombranch>
+git pull origin <custombranch>
+git merge master – always do before starting work on your branch to get it up to the latest and avoid conflicts
+git status – shows updates that have not been committed
+git add <new file name> or git add . – adds all files
+git commit -am "merged"
+git push origin <custombranch>
+
+
+Let’s now merge master
+git checkout master
+git checkout master
+git merge <custombranch>
+git commit -am "merged from custom branch"
+git push origin master
