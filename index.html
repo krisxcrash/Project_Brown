@@ -9,24 +9,24 @@
     <script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>The Event Network</title>
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- Start Top Bar -->
     <div class="top-bar">
         <div class="top-bar-left">
             <ul class="menu">
-                <li class="menu-text">ProJect Brown</li>
-                <!--           <li><a href="#">One</a></li>
-<li><a href="#">Two</a></li> -->
+                <center>
+                    <h3>PROJECT</h3>
+                    <h3 style="color:#E3493B">BROWN</h3>
             </ul>
         </div>
         <div class="top-bar-right">
-            <ul class="menu">
-                <li><a href="#">SignUp</a></li>
+            <ul class="menu menu-hover-lines">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Sign Up</a></li>
             </ul>
         </div>
     </div>
@@ -36,25 +36,49 @@
             <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
             <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
             <li class="orbit-slide is-active">
-                <img src="http://placehold.it/2000x950">
+                <img src="https://cdn.evbstatic.com/s3-build/perm_001/6812b9/django/images/home/banners/homepage_hero_banner_3.jpg">
+            </li>
+            <!--             <li class="orbit-slide">
+                <img src="http://placehold.it/2000x700">
             </li>
             <li class="orbit-slide">
-                <img src="http://placehold.it/2000x950">
+                <img src="http://placehold.it/2000x700">
             </li>
             <li class="orbit-slide">
-                <img src="http://placehold.it/2000x950">
-            </li>
-            <li class="orbit-slide">
-                <img src="http://placehold.it/2000x950">
-            </li>
+                <img src="http://placehold.it/2000x700">
+            </li> -->
         </ul>
     </div>
-    <div class="row column text-center">
-        <h2>Search</h2>
-        <hr>
+    <div class="translucent-form-overlay">
+        <form>
+        <strong>What are you looking for?</strong>
+            <div class="row columns">
+                <label>Keyword
+                    <input type="text" name="keyword" placeholder="Any">
+                </label>
+            </div>
+            <div class="row columns">
+                <label>Location
+                    <input type="text" name="location" placeholder="Any">
+                </label>
+            </div>
+            <div class="row">
+                <label class="columns small-12">Date</label>
+                <div class="columns small-6">
+                    <input type="number" min="0" name="min" placeholder="Min">
+                </div>
+                <div class="columns small-6">
+                    <input type="number" min="0" name="max" placeholder="Max">
+                </div>
+            </div>
+            <button type="button" class="button expanded">
+                Search
+            </button>
+        </form>
     </div>
-    <div class="row small-up-2 large-up-4">
-        <form action="" method="POST" role="form">
+    <br>
+    <hr>
+    <!--         <form action="" method="POST" role="form">
             <div class="form-group">
                 <label for="general-search">General Search</label>
                 <input type="text" class="form-control" id="input-general" placeholder="What are you looking for?">
@@ -68,87 +92,81 @@
                 <input type="text" id="input-end" placeholder="End Date">
             </div>
             <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
-        </form>
-    </div>
+        </form> -->
+
     <div class="row column text-center">
-        <h2>Upcoming</h2>
-        <hr>
+        <h3>Upcoming</h3>
+        <br>
     </div>
     <div class="row small-up-2 large-up-4">
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button expanded">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sample Event 1</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button expanded">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sample Event 2</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button expanded">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sample Event 3</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button expanded">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sameple Event 4</a>
         </div>
     </div>
     <hr>
     <div class="row column text-center">
-        <h2>Genres</h2>
-        <hr>
+        <h3>Categories</h3>
+        <br>
     </div>
     <div class="row small-up-2 medium-up-3 large-up-6">
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button small expanded hollow">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Music</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button small expanded hollow">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Fashion</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button small expanded hollow">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Food & Drink</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button small expanded hollow">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Business</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button small expanded hollow">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Community</a>
         </div>
         <div class="column">
-            <img class="thumbnail" src="http://placehold.it/300x400">
-            <a href="#" class="button small expanded hollow">Button</a>
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Media</a>
         </div>
     </div>
+    <br>
     <div class="callout large secondary">
-        <div class="row">
-            <div class="large-4 columns">
-                <h5>Subscribe</h5>
-                <p>Coming Soon......</p>
-            </div>
-            <div class="large-6 large-offset-2 columns">
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="email" type="email" class="validate">
-                                <label for="email" data-error="wrong" data-success="right">Email</label>
-                            </div>
+        <section class="newsletter-subscribe">
+            <div class="newsletter-subscribe-inner">
+                <p class="subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, officiis! Laudantium tenetur modi, voluptatum placeat illo, nisi aliquam nam dolore reiciendis vel.</p>
+                <form action="">
+                    <div class="input-group">
+                        <input class="input-group-field" type="email" placeholder="Enter your email for Yeti live streaming">
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
                         </div>
-                    </form>
-                </div>
-            </div>
+                    </div>
+                </form>
+        </section>
         </div>
-    </div>
-
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script src="assets/javascript/logic.js"></script>
-    <script>
-    $(document).foundation();
-    </script>
+        <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+        <script src="assets/javascript/logic.js"></script>
+        <script>
+        $(document).foundation();
+        </script>
 </body>
 
 </html>
