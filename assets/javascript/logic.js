@@ -16,6 +16,8 @@ var distanceSearch = 0;
 var startDate = "";
 var endDate = "";
 
+
+
 $("#submit-button").on("click", function() {
 	event.preventDefault();
 	generalSearch = $("#input-general").val().trim();
@@ -38,6 +40,7 @@ $("#submit-button").on("click", function() {
 		}).done(function(response) {
 			console.log(response);
 			var results = response.events;
+			console.log(response.events)
 
 			for (var i = 0; i < results.length; i++) {
 
@@ -55,7 +58,12 @@ $("#submit-button").on("click", function() {
 
 				//creates dynamic div for populating results
 				var eventDiv = $("<div class='item col-md-4 col-sm-6 event-list'>");
-
+				// Uncomment for map
+				// $('#map').gmap3({
+				// 	address: venueAddress,
+				// 	zoom: 6,
+				// 	mapTypeId : google.maps.MapTypeId.ROADMAP
+				// });
 				//prepends results to window
 				if (results[i].logo === null) {
 					eventDiv.append("<img src= https://placehold.it/400x200>");
@@ -89,13 +97,39 @@ $("#submit-button").on("click", function() {
     // Clear form
     $('form').trigger("reset");
     // Toggles form by clicking "Search" panel header
-    $(".toggle-form").click(function(){
-		$(".toggle-form-container").slideDown("slow");
-	});
+ //    $(".toggle-form").click(function(){
+	// 	$(".toggle-form-container").slideDown("slow");
+	// });
 });
 
-// Calendar function for start/end dates
 $(function() {
-	$("#input-start").datepicker();
-	$("#input-end").datepicker();
+	var dateFormat = "mm/dd/yy",
+		from = $("#input-start")
+			.datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 2
+		})
+		.on("change", function() {
+			to.datepicker("option", "minDate", getDate(this));
+		}),
+		to = $("#input-end").datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 2
+		})
+		.on("change", function() {
+			from.datepicker("option", "maxDate", getDate(this));
+		});
+ 
+	function getDate(element) {
+		var date;
+		try {
+			date = $.datepicker.parseDate(dateFormat, element.value);
+		} catch(error) {
+			date = null;
+		}
+		return date;
+	}
 });
+

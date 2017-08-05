@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlWBzIrgVam85t9ZvJzyo8HqR-wIPdPY"></script>
+    <script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <title>The Event Network</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <center>
+                    <h3>PROJECT</h3>
+                    <h3 style="color:#E3493B">BROWN</h3>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu menu-hover-lines">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Top Bar -->
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <ul class="orbit-container">
+            <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+            <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+            <li class="orbit-slide is-active">
+                <img src="https://cdn.evbstatic.com/s3-build/perm_001/6812b9/django/images/home/banners/homepage_hero_banner_3.jpg">
+            </li>
+            <!--             <li class="orbit-slide">
+                <img src="http://placehold.it/2000x700">
+            </li>
+            <li class="orbit-slide">
+                <img src="http://placehold.it/2000x700">
+            </li>
+            <li class="orbit-slide">
+                <img src="http://placehold.it/2000x700">
+            </li> -->
+        </ul>
+    </div>
+    <div class="translucent-form-overlay">
+        <form>
+        <strong>What are you looking for?</strong>
+            <div class="row columns">
+                <label>Keyword
+                    <input type="text" name="keyword" placeholder="Any">
+                </label>
+            </div>
+            <div class="row columns">
+                <label>Location
+                    <input type="text" name="location" placeholder="Any">
+                </label>
+            </div>
+            <div class="row">
+                <label class="columns small-12">Date</label>
+                <div class="columns small-6">
+                    <input type="number" min="0" name="min" placeholder="Min">
+                </div>
+                <div class="columns small-6">
+                    <input type="number" min="0" name="max" placeholder="Max">
+                </div>
+            </div>
+            <button type="button" class="button expanded">
+                Search
+            </button>
+        </form>
+    </div>
+    <br>
+    <hr>
+    <!--         <form action="" method="POST" role="form">
+            <div class="form-group">
+                <label for="general-search">General Search</label>
+                <input type="text" class="form-control" id="input-general" placeholder="What are you looking for?">
+                <label for="Location">Location</label>
+                <input type="text" class="form-control" id="input-location" placeholder="Location">
+                <label for="distance">Distance</label>
+                <input type="text" class="form-control" id="input-distance" placeholder="Miles away">
+                <label for="start-date">Start Date</label>
+                <input type="text" id="input-start" placeholder="Start Date">
+                <label for="end-date">End Date</label>
+                <input type="text" id="input-end" placeholder="End Date">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+        </form> -->
+
+    <div class="row column text-center">
+        <h3>Upcoming</h3>
+        <br>
+    </div>
+    <div class="row small-up-2 large-up-4">
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sample Event 1</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sample Event 2</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sample Event 3</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F29074440%2F173990356230%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C159%2C1440%2C720&s=e2194ae4f871711892b7ed898ef96219">
+            <a href="#" class="button small expanded hollow">Sameple Event 4</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row column text-center">
+        <h3>Categories</h3>
+        <br>
+    </div>
+    <div class="row small-up-2 medium-up-3 large-up-6">
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Music</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Fashion</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Food & Drink</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Business</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Community</a>
+        </div>
+        <div class="column">
+            <img class="thumbnail" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33722349%2F74120902641%2F1%2Foriginal.jpg?h=300&w=600&rect=0%2C105%2C1600%2C800&s=5393ab171f97dc768a4f346e5f3f96d9">
+            <a href="#" class="button small expanded hollow">Media</a>
+        </div>
+    </div>
+    <br>
+    <div class="callout large secondary">
+        <section class="newsletter-subscribe">
+            <div class="newsletter-subscribe-inner">
+                <p class="subheader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, officiis! Laudantium tenetur modi, voluptatum placeat illo, nisi aliquam nam dolore reiciendis vel.</p>
+                <form action="">
+                    <div class="input-group">
+                        <input class="input-group-field" type="email" placeholder="Enter your email for Yeti live streaming">
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
+                    </div>
+                </form>
+        </section>
+        </div>
+        <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+        <script src="assets/javascript/logic.js"></script>
+        <script>
+        $(document).foundation();
+        </script>
+</body>
+
+</html>
