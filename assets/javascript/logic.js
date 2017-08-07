@@ -1,3 +1,6 @@
+// Revisions:
+// 8/6 18:00 CJ - Updated current, simplified JS
+
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
