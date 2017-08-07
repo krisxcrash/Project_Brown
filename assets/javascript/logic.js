@@ -1,3 +1,6 @@
+// Revisions:
+// 8/6 18:00 CJ - Updated current, simplified JS
+
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
@@ -15,8 +18,6 @@ var locationSearch = "";
 var distanceSearch = 0;
 var startDate = "";
 var endDate = "";
-
-
 
 $("#submit-button").on("click", function() {
 	event.preventDefault();
@@ -42,58 +43,51 @@ $("#submit-button").on("click", function() {
 			var results = response.events;
 			console.log(response.events)
 
-			for (var i = 0; i < results.length; i++) {
-
+			results.forEach(function(result) {
 				//variables for prepending to window
-				var eventTitle = results[i].name.text;
-				var eventDescription = results[i].description.text;
-				var startEvent = results[i].start.local;
-				var endEvent = results[i].end.local;
-				var eventImage = $("<img>");
-				var venueName = results[i].venue.name;
-				var venueLat = results[i].venue.latitude; // Unused
-				var venueLon = results[i].venue.longitude; // Unused
-				var venueAddress = results[i].venue.address.localized_address_display;
-				var organizerName = results[i].organizer.name;
+				var eventTitle = result.name.text;
+				var eventDescription = result.description.text;
+				var startEvent = result.start.local;
+				var endEvent = result.end.local;
+				var eventImageDiv = $("<img>");
+				var eventImage = result.logo.url;
+				var venueName = result.venue.name;
+				var venueLat = parseInt(result.venue.latitude); // Unused
+				var venueLon = parseInt(result.venue.longitude); // Unused
+				var venueAddress = result.venue.address.localized_address_display;
+				var organizerName = result.organizer.name;
 
 				//creates dynamic div for populating results
 				var eventDiv = $("<div class='item col-md-4 col-sm-6 event-list'>");
-				// Uncomment for map
-				// $('#map').gmap3({
-				// 	address: venueAddress,
-				// 	zoom: 6,
-				// 	mapTypeId : google.maps.MapTypeId.ROADMAP
-				// });
-				//prepends results to window
-				if (results[i].logo === null) {
+					eventDiv.on("click", function() {
+						sessionStorage.setItem("title", eventTitle);
+						sessionStorage.setItem("description", eventDescription);
+						sessionStorage.setItem("eventstart", startEvent);
+						sessionStorage.setItem("eventend", endEvent);
+						sessionStorage.setItem("logo", eventImage)
+						sessionStorage.setItem("venue", venueName);
+						sessionStorage.setItem("latitude", venueLat);
+						sessionStorage.setItem("longitude", venueLon);
+						sessionStorage.setItem("address", venueAddress);
+						sessionStorage.setItem("organizer", organizerName);
+					})
+				if (result.logo === null) {
 					eventDiv.append("<img src= https://placehold.it/400x200>");
-					eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
-					eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
-					eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
-					eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
-					eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
-					eventDiv.append("<h5>Venue: </h5><h6>" + venueName + "</h6>");
-					eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
-					$(".events").prepend(eventDiv);
 				}
-
 				else {
-					eventImage.attr("src", results[i].logo.url);
-					eventDiv.append(eventImage);
-					eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
-					eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
-					eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
-					eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
-					eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
-					eventDiv.append("<h5>Venue: </h5><h6>" + venueName + "</h6>");
-					eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
-					$(".events").prepend(eventDiv);
-				};
-			// console.log(response.location.augmented_location.city);
-			// console.log(results[i].venue.name);
-			};
+					eventImageDiv.attr("src", eventImage);
+				}
+				eventDiv.append(eventImageDiv);
+				eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
+				eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
+				eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
+				eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
+				eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
+				eventDiv.append("<h5>Venue: </h5><h6>" + venueName + "</h6>");
+				eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
+				$(".events").prepend(eventDiv);
+			})
 		});
-
     // Clear form
     $('form').trigger("reset");
     // Toggles form by clicking "Search" panel header
@@ -133,3 +127,10 @@ $(function() {
 	}
 });
 
+
+// function mapCreator() {
+// 					map = google.maps.Map(document.getElementById('map'), {
+// 						center: {lat: venueLat, lng: venueLon},
+// 						zoom: 13
+// 					});
+// 				}
