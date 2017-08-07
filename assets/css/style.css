@@ -1,5 +1,11 @@
 .h3-panel-header {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+#map {
+	width: 50%;
+	height: 400px;
+	background-color: grey;
 }
 
 h3 {
