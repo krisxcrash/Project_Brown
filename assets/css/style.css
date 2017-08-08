@@ -1,34 +1,21 @@
-
 body {
     background-color: #f8f8f8;
-    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 24px;
-
-.h3-panel-header {
-	cursor: pointer;
-}
-
-#map {
-	width: 50%;
-	height: 400px;
-	background-color: grey;
-
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;\
 }
 
 h3 {
     color: #000000;
-
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: bolder;
     font-size: 20px;
 }
 
-
 #top-bar {
-    background-color: #000;
+    background-color: #f8f8f8;
 }
+
 .top-bar, .top-bar ul {
-  background-color: #000;
+  background-color: #f8f8f8;
 }
 
 #result-head {
@@ -40,7 +27,7 @@ h3 {
 }
 
 .button {
-    background-color: #EEBA4C;
+    background-color: #000;
 }
 
 .button.small.expanded.hollow {
@@ -55,7 +42,7 @@ h3 {
 }
 
 .button.expanded {
-    background-color: #f8f8f8;
+    background-color: gray;
     color: #000;
 }
 
@@ -190,10 +177,10 @@ h3 {
 }
 
 #index-search-box {
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     float: right;
-    margin: 50px;
+    margin: 150px;
     background-color: rgba(54, 54, 54, 0.8);
     padding: 20px;
     color: #fefefe;
@@ -201,16 +188,8 @@ h3 {
     margin-top: -825px;
 }
 
-result-search-box {
-    max-width: 500px;
-    width: 100%;
-    float: right;
-    margin: 50px;
-    background-color: rgba(54, 54, 54, 0.8);
-    padding: 20px;
-    color: #fefefe;
-    position: relative;
-    margin-top: -825px;
+.search-box-results {
+  background-color: #000;
 }
 
 .translucent-form-overlay .columns.row {
