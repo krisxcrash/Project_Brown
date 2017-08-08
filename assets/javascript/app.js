@@ -6,7 +6,7 @@
 //on click function runs ajax call to pull yelp data out of node. 
 
 $("#test").on("click", function() {
-	var queryURL = 	"http://localhost:5000/yelp/?q=" + q + "&location=" + loc + "&radius=5mi&open_now=true" 
+	var queryURL = 	"https://pure-savannah-62932.herokuapp.com/yelp/?q=" + q + "&location=" + loc + "&radius=5mi&open_now=true" 
 
 	$.ajax({
 		url: queryURL,
