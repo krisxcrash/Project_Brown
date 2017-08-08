@@ -1,7 +1,18 @@
+
 body {
     background-color: #f8f8f8;
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-size: 24px;
+
+.h3-panel-header {
+	cursor: pointer;
+}
+
+#map {
+	width: 50%;
+	height: 400px;
+	background-color: grey;
+
 }
 
 h3 {
