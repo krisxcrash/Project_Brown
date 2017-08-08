@@ -1,25 +1,31 @@
-.h3-panel-header {
-    cursor: pointer;
+body {
+    background-color: #f8f8f8;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 24px;
 }
 
 h3 {
-    color: #E3493B;
-    background-color: #f8f8f8;
+    color: #000000;
+
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: bolder;
     font-size: 20px;
 }
 
-.menu a {
-    color: #E3493B;
+
+#top-bar {
+    background-color: #000;
+}
+.top-bar, .top-bar ul {
+  background-color: #000;
+}
+
+#result-head {
+  color: #fff;
 }
 
 .menu>li {
     background-color: #f8f8f8;
-}
-
-.thumbnail {
-    border: 1px solid #fff;
 }
 
 .button {
@@ -42,23 +48,19 @@ h3 {
     color: #000;
 }
 
-body {
-    background-color: #f8f8f8;
-    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
 
-.top-bar {
-    background-color: #f8f8f8;
-}
 
 .callout.large {
     margin-top: 150px;
-    background-color: #f8f8f8;
-    border-top: 5px solid #E3493B;
+    background-color: gray;
+    border-top: 5px solid #000000;
     ;
     color: #fff;
 }
 
+.subheader {
+  color: #000;
+}
 
 .form-floating-label {
     position: relative;
@@ -87,7 +89,7 @@ body {
 }
 
 .form-floating-label label {
-    color: #E3493B;
+    color: #000000;
     font-size: 18px;
     position: absolute;
     pointer-events: none;
@@ -108,7 +110,7 @@ body {
 .form-floating-label.has-value input~label {
     top: 0;
     font-size: 14px;
-    color: #E3493B;
+    color: #000000;
     font-weight: 400;
 }
 
@@ -116,7 +118,7 @@ body {
 .form-floating-label.has-value textarea~label {
     top: 0;
     font-size: 14px;
-    color: #E3493B;
+    color: #000000;
     font-weight: 400;
 }
 
@@ -130,7 +132,7 @@ body {
 
 .menu-hover-lines li a {
     padding: 0.75rem 0;
-    color: #E3493B;
+    color: #000000;
     position: relative;
     margin-left: 1rem;
 }
@@ -149,7 +151,7 @@ body {
     position: absolute;
     content: '';
     transition: all 0.35s ease;
-    background-color: #E3493B;
+    background-color: #000000;
     width: 0;
 }
 
@@ -165,7 +167,7 @@ body {
 
 .menu-hover-lines a:hover,
 .menu-hover-lines li.active>a {
-    color: #E3493B;
+    color: #000000;
     transition: all 0.35s ease;
 }
 
@@ -176,7 +178,7 @@ body {
     width: 100%;
 }
 
-.translucent-form-overlay {
+#index-search-box {
     max-width: 500px;
     width: 100%;
     float: right;
@@ -185,7 +187,19 @@ body {
     padding: 20px;
     color: #fefefe;
     position: relative;
-    margin-top: -425px;
+    margin-top: -825px;
+}
+
+result-search-box {
+    max-width: 500px;
+    width: 100%;
+    float: right;
+    margin: 50px;
+    background-color: rgba(54, 54, 54, 0.8);
+    padding: 20px;
+    color: #fefefe;
+    position: relative;
+    margin-top: -825px;
 }
 
 .translucent-form-overlay .columns.row {
@@ -214,8 +228,87 @@ body {
     color: #8a8a8a;
 }
 
+
 #map {
     display: block;
     width: 50%;
     height: 300px;
 }
+
+.marketing-site-content-section {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.marketing-site-content-section .button.round {
+  border-radius: 5000px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.marketing-site-content-section .marketing-site-content-section-img {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+
+.marketing-site-content-section .marketing-site-content-section-img img {
+  width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .marketing-site-content-section .marketing-site-content-section-img {
+    -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+  }
+}
+
+.marketing-site-content-section .marketing-site-content-section-block {
+  padding: 1rem;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+          align-self: stretch;
+  background: #e6e6e6;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media screen and (min-width: 40em) {
+  .marketing-site-content-section .marketing-site-content-section-block {
+    -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    padding: 2rem;
+  }
+}
+
+.marketing-site-content-section-block-header {
+  font-size: 24px;
+}
+
+.marketing-site-content-section-block-subheader {
+  font-size: 13px;
+}
+

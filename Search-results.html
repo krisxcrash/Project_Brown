@@ -12,22 +12,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <title>The Event Network</title>
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/style2.css">
 </head>
 
 <body>
-    <div class="top-bar">
+    <div class="top-bar" id="result-top-bar">
         <!-- Temporary PROJECT BROWN logo (delete this later) -->
-        <div class="top-bar-left">
+        <div class="top-bar-left" id="result-head">
             <ul class="menu">
                 <center>
-                    <h3>PROJECT <span style="color:brown">BROWN</span></h3>
+                    <h3 id="result-head">PROJECT BROWN</h3>
             </ul>
         </div>
         <!-- Menu bar on top right side of the page -->
-        <div class="top-bar-right">
+        <div class="top-bar-right" id="result-head">
             <ul class="menu menu-hover-lines">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
         </div>
@@ -72,7 +73,7 @@
                         <div class="columns small-6">
                             <input type="text" class="form-control" name="max" placeholder="End Date" id="input-end">
                         </div>
-                    </div>
+                    </div>s
                     <button type="submit" class="button expanded" id="submit-button">
                         Search
                     </button>
