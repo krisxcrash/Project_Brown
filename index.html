@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <title>The Event Network</title>
@@ -19,7 +19,6 @@
         <div class="top-bar-left">
             <ul class="menu menu-hover-lines">
                 <li class="active"><a>Project Brown</a></li>
-
             </ul>
         </div>
         <div class="top-bar-right">
@@ -30,7 +29,7 @@
         </div>
     </div>
     <!-- End Top Bar -->
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit id="splash-screen">
         <ul class="orbit-container">
             <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
             <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
@@ -48,61 +47,10 @@
             </li>
         </ul>
     </div>
-    <div class="translucent-form-overlay" id="index-search-box">
-        <form action="" method="POST" role="form">
-            <strong>What are you looking for?</strong>
-            <div class="row columns">
-                <label>Keyword
-                    <input type="text" class="form-control" name="keyword" placeholder="Any" id="input-general">
-                </label>
-            </div>
-            <div class="row columns">
-                <label>Location
-                    <input type="text" class="form-control" name="location" placeholder="Irvine" id="input-location">
-                </label>
-            </div>
-            <div class="row">
-                <label class="columns small-12">Date</label>
-                <div class="columns small-6">
-                    <input type="text" class="form-control" name="min" placeholder="Start Date" id="input-start">
-                </div>
-                <div class="columns small-6">
-                    <input type="text" class="form-control" name="max" placeholder="End Date" id="input-end">
-                </div>
-            </div>
-            <button type="submit" class="round button expanded" id="submit-button">
-                Search
-            </button>
-        </form>
-    </div>
-    <br>
-
-    <div class="row column text-center">
+    <div class="row column text-center" id="welcome-button">
         <h3>COMING</h3>
         <h3>UP</h3>
-        <br>
     </div>
-    <div class="row medium-10 large-10 columns">
-        <div class="marketing-site-content-section">
-            <div class="marketing-site-content-section-img">
-                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33419628%2F68193446877%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C700%2C1598%2C799&s=a79759aa43ae2c98bd26b68594976e1e" alt="" />
-            </div>
-            <div class="marketing-site-content-section-block">
-                <h3 class="marketing-site-content-section-block-header">Event 1</h3>
-                <p class="marketing-site-content-section-block-subheader subheader">Event info</p>
-                <a href="#" class="round button expanded">learn more</a>
-            </div>
-            <div class="marketing-site-content-section-block small-order-2 medium-order-1">
-                <h3 class="marketing-site-content-section-block-header">Event 2</h3>
-                <p class="marketing-site-content-section-block-subheader subheader">Event Description</p>
-                <a href="#" class="round button expanded">learn more</a>
-            </div>
-            <div class="marketing-site-content-section-img small-order-1 medium-order-2">
-                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F33270845%2F63245000541%2F1%2Foriginal.jpg?h=230&w=460&rect=0%2C0%2C3600%2C1800&s=3283a3f9cb3a72c52661574ae329de5c" alt="" />
-            </div>
-        </div>
-    </div>
-    <br>
     <div class="callout large secondary">
         <section class="newsletter-subscribe">
             <div class="newsletter-subscribe-inner">

@@ -2,7 +2,6 @@
 // Revisions:
 // 8/6 CJ 19:00 - Added input-distance class, commented out test results. Pagination needs implementation
 -->
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -21,18 +20,15 @@
 </head>
 
 <body>
-    <div class="top-bar" id="result-top-bar">
-        <!-- Temporary PROJECT BROWN logo (delete this later) -->
-        <div class="top-bar-left" id="result-head">
-            <ul class="menu">
-                <center>
-                    <h3>PROJECT <span style="color:brown">BROWN</span></h3>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu menu-hover-lines">
+                <li class="active"><a>Project Brown</a></li>
             </ul>
         </div>
-        <!-- Menu bar on top right side of the page -->
-        <div class="top-bar-right" id="result-head">
+        <div class="top-bar-right">
             <ul class="menu menu-hover-lines">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
         </div>
@@ -45,9 +41,9 @@
         </div>
         <!-- Creates the search form that captures user inputs on local events -->
         <div class="medium-5 large-6 columns">
-            <div class="translucent-form-overlay">
+            <div class="translucent-form-overlay" id="search-box">
                 <form action="" method="POST" role="form">
-                    <strong>What are you looking for?</strong>
+                    <!-- <strong>What are you looking for?</strong> -->
                     <div class="row columns">
                         <label>Keyword
                             <input type="text" class="form-control" name="keyword" placeholder="Any" id="input-general">
@@ -78,9 +74,9 @@
                             <input type="text" class="form-control" name="max" placeholder="End Date" id="input-end">
                         </div>
                     </div>
-            <button type="submit" class="button expanded" id="submit-button">
-                Search
-            </button>
+                    <button type="submit" class="button expanded" id="submit-button">
+                        Search
+                    </button>
                 </form>
             </div>
         </div>
@@ -94,8 +90,6 @@
     </div>
     <div class="row small-up-1 medium-up-2 large-up-3 search-results">
     </div>
-
-
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="assets/javascript/logic.js">
     </script>
