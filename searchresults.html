@@ -28,55 +28,56 @@
         </div>
         <div class="top-bar-right">
             <ul class="menu menu-hover-lines">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
         </div>
     </div>
     <!-- Navigation -->
     <br>
-    <div class="row" id="search-box-results">
-        <div class="medium-7 large-6 columns">
-            <h1><em>Explore what's happening in your hood!</em></h1>
-        </div>
-        <!-- Creates the search form that captures user inputs on local events -->
-        <div class="medium-5 large-6 columns">
-            <div class="translucent-form-overlay" id="search-box">
-                <form action="" method="POST" role="form">
-                    <!-- <strong>What are you looking for?</strong> -->
-                    <div class="row columns">
-                        <label>Keyword
-                            <input type="text" class="form-control" name="keyword" placeholder="Any" id="input-general">
-                        </label>
-                    </div>
-                    <div class="row columns">
-                        <label>Venue Area
-                            <input type="text" class="form-control" name="location" placeholder="Enter a zip code or city" id="input-location">
-                        </label>
-                    </div>
-                    <div class="row columns">
-                        <label>Location within:
-                        </label>
-                        <select>
-                            <option class="input-distance" value="5">5 miles</option>
-                            <option class="input-distance" value="10">10 miles</option>
-                            <option class="input-distance" value="15">15 miles</option>
-                            <option class="input-distance" value="25">25 miles</option>
-                            <option class="input-distance" value="50">50 miles</option>
-                        </select>
-                    </div>
+    <div class="row column text-center" id="event-box">
+        <img src="assets/images/events.png">
+    </div>
+    <div class="row">
+        <div class="tabbed-search-content tabs-content" data-tabs-content="tabbed-search">
+            <div class="tabs-panel is-active" id="panel1">
+                <form>
                     <div class="row">
-                        <label class="columns small-12">Date</label>
-                        <div class="columns small-6">
-                            <input type="text" class="form-control" name="min" placeholder="Start Date" id="input-start">
+                        <div class="small-12 medium-2 columns">
+                            <label> Keyword
+                                <input type="text" class="form-control" name="keyword" placeholder="Any" id="input-general">
+                            </label>
                         </div>
-                        <div class="columns small-6">
+                        <div class="small-12 medium-2 columns">
+                            <label>Venue Area
+                                <input type="text" class="form-control" name="location" placeholder="Zip/City" id="input-location">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label> Date
+                                <input type="text" class="form-control" name="min" placeholder="Start Date" id="input-start">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label><br>
                             <input type="text" class="form-control" name="max" placeholder="End Date" id="input-end">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label>Location within:
+                                <select>
+                                    <option class="input-distance" value="5">5 miles</option>
+                                    <option class="input-distance" value="10">10 miles</option>
+                                    <option class="input-distance" value="15">15 miles</option>
+                                    <option class="input-distance" value="25">25 miles</option>
+                                    <option class="input-distance" value="50">50 miles</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns"><br>
+                            <button type="submit" class="primary button expanded search-button" id="submit-button"><i class="fa fa-search"></i>Search</button>
                         </div>
                     </div>
-                    <button type="submit" class="button expanded" id="submit-button">
-                        Search
-                    </button>
                 </form>
             </div>
         </div>
@@ -92,6 +93,8 @@
     </div>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="assets/javascript/logic.js">
+    </script>
+    <script src="assets/javascript/animate.js">
     </script>
     <script>
     $(document).foundation();
