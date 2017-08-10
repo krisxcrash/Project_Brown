@@ -1,3 +1,325 @@
+
+body {
+    background-color: #f8f8f8;
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 24px;
+
 .h3-panel-header {
 	cursor: pointer;
 }
+
+#map {
+	width: 50%;
+	height: 400px;
+	background-color: grey;
+
+}
+
+h3 {
+    color: #000000;
+
+    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+#top-bar {
+    background-color: #000;
+}
+.top-bar, .top-bar ul {
+  background-color: #000;
+}
+
+#result-head {
+  color: #fff;
+}
+
+.menu>li {
+    background-color: #f8f8f8;
+}
+
+.button {
+    background-color: #EEBA4C;
+}
+
+.button.small.expanded.hollow {
+    width: 40%;
+    position: relative;
+    margin-top: -100px;
+}
+
+.button.hollow {
+    color: white;
+    border-color: gray;
+}
+
+.button.expanded {
+    background-color: #f8f8f8;
+    color: #000;
+}
+
+
+
+.callout.large {
+    margin-top: 150px;
+    background-color: gray;
+    border-top: 5px solid #000000;
+    ;
+    color: #fff;
+}
+
+.subheader {
+  color: #000;
+}
+
+.form-floating-label {
+    position: relative;
+}
+
+.form-floating-label [type='text'],
+.form-floating-label [type='password'],
+.form-floating-label [type='date'],
+.form-floating-label [type='datetime'],
+.form-floating-label [type='datetime-local'],
+.form-floating-label [type='month'],
+.form-floating-label [type='week'],
+.form-floating-label [type='email'],
+.form-floating-label [type='number'],
+.form-floating-label [type='search'],
+.form-floating-label [type='tel'],
+.form-floating-label [type='time'],
+.form-floating-label [type='url'],
+.form-floating-label [type='color'],
+.form-floating-label textarea {
+    margin-bottom: 0;
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 30px 1rem 1rem 25px;
+}
+
+.form-floating-label label {
+    color: #000000;
+    font-size: 18px;
+    position: absolute;
+    pointer-events: none;
+    left: 25px;
+    bottom: 0;
+    transition: all 0.9s ease-in;
+    font-weight: 300;
+}
+
+.form-floating-label textarea~label {
+    top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.form-floating-label input:focus~label,
+.form-floating-label input:disabled[value]~label,
+.form-floating-label.has-value input~label {
+    top: 0;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.form-floating-label textarea:focus~label,
+.form-floating-label.has-value textarea~label {
+    top: 0;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.menu-hover-lines {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.35s ease;
+}
+
+.menu-hover-lines li a {
+    padding: 0.75rem 0;
+    color: #000000;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.menu-hover-lines li:first-child a {
+    margin-left: 0;
+}
+
+.menu-hover-lines li.active>a {
+    background-color: transparent;
+}
+
+.menu-hover-lines a:before,
+.menu-hover-lines a::after {
+    height: 3px;
+    position: absolute;
+    content: '';
+    transition: all 0.35s ease;
+    background-color: #000000;
+    width: 0;
+}
+
+.menu-hover-lines a::before {
+    top: 0;
+    left: 0;
+}
+
+.menu-hover-lines a::after {
+    bottom: 0;
+    right: 0;
+}
+
+.menu-hover-lines a:hover,
+.menu-hover-lines li.active>a {
+    color: #000000;
+    transition: all 0.35s ease;
+}
+
+.menu-hover-lines a:hover::before,
+.menu-hover-lines .active a::before,
+.menu-hover-lines a:hover::after,
+.menu-hover-lines .active a::after {
+    width: 100%;
+}
+
+#index-search-box {
+    max-width: 500px;
+    width: 100%;
+    float: right;
+    margin: 50px;
+    background-color: rgba(54, 54, 54, 0.8);
+    padding: 20px;
+    color: #fefefe;
+    position: relative;
+    margin-top: -825px;
+}
+
+result-search-box {
+    max-width: 500px;
+    width: 100%;
+    float: right;
+    margin: 50px;
+    background-color: rgba(54, 54, 54, 0.8);
+    padding: 20px;
+    color: #fefefe;
+    position: relative;
+    margin-top: -825px;
+}
+
+.translucent-form-overlay .columns.row {
+    display: block;
+}
+
+.translucent-form-overlay h3,
+.translucent-form-overlay label {
+    color: #fefefe;
+}
+
+.translucent-form-overlay input,
+.translucent-form-overlay select {
+    color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+    color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+    color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+    color: #8a8a8a;
+}
+
+
+#map {
+    display: block;
+    width: 50%;
+    height: 300px;
+}
+
+.marketing-site-content-section {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.marketing-site-content-section .button.round {
+  border-radius: 5000px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.marketing-site-content-section .marketing-site-content-section-img {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+
+.marketing-site-content-section .marketing-site-content-section-img img {
+  width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .marketing-site-content-section .marketing-site-content-section-img {
+    -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+  }
+}
+
+.marketing-site-content-section .marketing-site-content-section-block {
+  padding: 1rem;
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+          align-self: stretch;
+  background: #e6e6e6;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media screen and (min-width: 40em) {
+  .marketing-site-content-section .marketing-site-content-section-block {
+    -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    padding: 2rem;
+  }
+}
+
+.marketing-site-content-section-block-header {
+  font-size: 24px;
+}
+
+.marketing-site-content-section-block-subheader {
+  font-size: 13px;
+}
+

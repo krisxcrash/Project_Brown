@@ -1,3 +1,9 @@
+// Revisions:
+// 8/6 18:00 CJ - Updated current, simplified JS
+// 8/6 19:00 CJ - Added comments, fixed Null images, retooled to "slightly" fit search-results.html
+
+// 8/6 To DO: convert time values given to us, Re-implement form-toggling/hide on submit, search result pagination
+
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
@@ -16,18 +22,19 @@ var distanceSearch = 0;
 var startDate = "";
 var endDate = "";
 
+// On submit button click, perform ajax call and main search/populating functions
 $("#submit-button").on("click", function() {
 	event.preventDefault();
 	generalSearch = $("#input-general").val().trim();
 	locationSearch = $("#input-location").val().trim();
-	distanceSearch = parseInt($("#input-distance").val());
+	distanceSearch = parseInt($(".input-distance").val());
 	startDate = $("#input-start").val();
 	endDate = $("#input-end").val();
 
-	// Hides form panel on submission
-	$(".toggle-form-container").slideUp("slow");
+	// Hides form panel on submission -- unused as of 8/6. Needs re-implementation
+	// $(".toggle-form-container").slideUp("slow");
 
-	// Converts time from our calendar to UTC
+	// Converts time from our calendar to UTC for queryURL
 	var convertedStart = moment.utc(startDate).format();
 	var convertedEnd = moment.utc(endDate).format();
 
@@ -38,64 +45,99 @@ $("#submit-button").on("click", function() {
 		}).done(function(response) {
 			console.log(response);
 			var results = response.events;
-
-			for (var i = 0; i < results.length; i++) {
-
-				//variables for prepending to window
-				var eventTitle = results[i].name.text;
-				var eventDescription = results[i].description.text;
-				var startEvent = results[i].start.local;
-				var endEvent = results[i].end.local;
-				var eventImage = $("<img>");
-				var venueName = results[i].venue.name;
-				var venueLat = results[i].venue.latitude; // Unused
-				var venueLon = results[i].venue.longitude; // Unused
-				var venueAddress = results[i].venue.address.localized_address_display;
-				var organizerName = results[i].organizer.name;
+			console.log(response.events);
+			// loop through JSON results to create unique variables/storage/populating HTML
+			results.forEach(function(result) {
+				// Saving JSON object results to variables
+				var eventImageDiv = $("<img>");
+				// var eventImage = result.logo.url;
+				if (result.logo === null) {
+					var eventImage = "https://placehold.it/400x200";
+					eventImageDiv.attr("src", "https://placehold.it/400x200");
+				}
+				else {
+					var eventImage = result.logo.url;
+					eventImageDiv.attr("src", eventImage);
+				}
+				var eventTitle = result.name.text;
+				var eventDescription = result.description.text;
+				var startEvent = result.start.local;
+				var endEvent = result.end.local;
+				var venueName = result.venue.name;
+				var venueLat = parseInt(result.venue.latitude); // Unused
+				var venueLon = parseInt(result.venue.longitude); // Unused
+				var venueAddress = result.venue.address.localized_address_display;
+				var organizerName = result.organizer.name;
 
 				//creates dynamic div for populating results
-				var eventDiv = $("<div class='item col-md-4 col-sm-6 event-list'>");
-
-				//prepends results to window
-				if (results[i].logo === null) {
-					eventDiv.append("<img src= https://placehold.it/400x200>");
-					eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
-					eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
-					eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
-					eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
-					eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
-					eventDiv.append("<h5>Venue: </h5><h6>" + venueName + "</h6>");
-					eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
-					$(".events").prepend(eventDiv);
-				}
-
-				else {
-					eventImage.attr("src", results[i].logo.url);
-					eventDiv.append(eventImage);
-					eventDiv.append("<h2 class= 'title'>" + eventTitle + "</h2>");
-					eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
-					eventDiv.append("<h5 class= 'times'>Start Time: </h5><p>" + startEvent + "</p>");
-					eventDiv.append("<h5 class= 'times'>End Time: </h5><p>" + endEvent + "</p>");
-					eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
-					eventDiv.append("<h5>Venue: </h5><h6>" + venueName + "</h6>");
-					eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
-					$(".events").prepend(eventDiv);
-				};
-			// console.log(response.location.augmented_location.city);
-			// console.log(results[i].venue.name);
-			};
+				var eventDiv = $("<div class='column event-list'>");
+				// When a result's div is clicked, that information is saved in sessionstorage to be passed onto event page
+				eventDiv.on("click", function() {
+					sessionStorage.setItem("title", eventTitle);
+					sessionStorage.setItem("description", eventDescription);
+					sessionStorage.setItem("eventstart", startEvent);
+					sessionStorage.setItem("eventend", endEvent);
+					sessionStorage.setItem("logo", eventImage);
+					sessionStorage.setItem("venue", venueName);
+					sessionStorage.setItem("latitude", venueLat);
+					sessionStorage.setItem("longitude", venueLon);
+					sessionStorage.setItem("address", venueAddress);
+					sessionStorage.setItem("organizer", organizerName);
+				})
+				eventDiv.append(eventImageDiv);
+				eventDiv.append("<p>" + eventTitle + "</p>");
+				// eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
+				eventDiv.append("<p class='event-time'>Start Time: </p><p>" + startEvent + "</p>");
+				eventDiv.append("<p class='event-time'>End Time: </p><p>" + endEvent + "</p>");
+				// eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
+				eventDiv.append("<p class='event-time'>Location: </p><p>" + venueName + "</p>");
+				// eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
+				$(".search-results").prepend(eventDiv);
+			})
 		});
-
     // Clear form
     $('form').trigger("reset");
-    // Toggles form by clicking "Search" panel header
-    $(".toggle-form").click(function(){
-		$(".toggle-form-container").slideDown("slow");
-	});
+    // Toggles form by clicking "Search" panel header -- Needs re-implementation
+ 	//    $(".toggle-form").click(function(){
+	// 	$(".toggle-form-container").slideDown("slow");
+	// });
 });
 
-// Calendar function for start/end dates
 $(function() {
-	$("#input-start").datepicker();
-	$("#input-end").datepicker();
+	var dateFormat = "mm/dd/yy",
+		from = $("#input-start")
+			.datepicker({
+				defaultDate: "+1w",
+				changeMonth: true,
+				numberOfMonths: 2
+		})
+		.on("change", function() {
+			to.datepicker("option", "minDate", getDate(this));
+		}),
+		to = $("#input-end").datepicker({
+			defaultDate: "+1w",
+			changeMonth: true,
+			numberOfMonths: 2
+		})
+		.on("change", function() {
+			from.datepicker("option", "maxDate", getDate(this));
+		});
+ 
+	function getDate(element) {
+		var date;
+		try {
+			date = $.datepicker.parseDate(dateFormat, element.value);
+		} catch(error) {
+			date = null;
+		}
+		return date;
+	}
 });
+
+
+// function mapCreator() {
+// 					map = google.maps.Map(document.getElementById('map'), {
+// 						center: {lat: venueLat, lng: venueLon},
+// 						zoom: 13
+// 					});
+// 				}
