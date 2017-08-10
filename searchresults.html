@@ -33,11 +33,15 @@
             </ul>
         </div>
     </div>
-    <!-- Navigation -->
-    <br>
-    <div class="row column text-center" id="event-box">
-        <img src="assets/images/events.png">
-    </div>
+
+<div class="callout large">
+<div class="row column text-center">
+
+<img src="assets/images/events.png">
+
+</div>
+
+</div>
     <div class="row">
         <div class="tabbed-search-content tabs-content" data-tabs-content="tabbed-search">
             <div class="tabs-panel is-active" id="panel1">
@@ -50,17 +54,17 @@
                         </div>
                         <div class="small-12 medium-2 columns">
                             <label>Venue Area
-                                <input type="text" class="form-control" name="location" placeholder="Zip/City" id="input-location">
+                                <input type="text" class="form-control" name="location" placeholder="City/Zip" id="input-location">
                             </label>
                         </div>
                         <div class="small-12 medium-2 columns">
                             <label> Date
-                                <input type="text" class="form-control" name="min" placeholder="Start Date" id="input-start">
+                                <input type="text" class="form-control" name="min" placeholder="Start" id="input-start">
                             </label>
                         </div>
                         <div class="small-12 medium-2 columns">
                             <label><br>
-                            <input type="text" class="form-control" name="max" placeholder="End Date" id="input-end">
+                            <input type="text" class="form-control" name="max" placeholder="End" id="input-end">
                             </label>
                         </div>
                         <div class="small-12 medium-2 columns">
@@ -82,14 +86,20 @@
             </div>
         </div>
     </div>
-    <div class="row column">
-        <hr>
-    </div>
-    <!-- Creates the event results (fifteen results in total) -->
-    <div class="row column">
+ <!-- Creates the event results (fifteen results in total) -->
+    <div class="row">
         <p class="lead">Event Results</p>
-    </div>
+            <table class="table-format">
+                <tr>
+                    <th class= "table-header-format" width="600">Event</th>
+                    <th class= "table-header-format" width="150">Start</th>
+                    <th class= "table-header-format" width="150">End</th>
+                    <th class= "table-header-format" width="300">Location</th>
+                </tr>
+            </table>
+        </div>
     <div class="row small-up-1 medium-up-2 large-up-3 search-results">
+    </div>
     </div>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="assets/javascript/logic.js">
