@@ -49,6 +49,7 @@ body {
 /*EVENT LOGO*/
 
 .callout.large {
+    top: 30px;
     margin-top: 25px;
     height: auto;
     background-color: transparent;
@@ -137,7 +138,7 @@ body {
 .tabbed-search-content {
     position: relative;
     padding-top: 80px;
-    top: -150px;
+    top: -120px;
     z-index: 0;
     background: rgba(70, 70, 70, 0.3);
     border: none;
@@ -324,4 +325,38 @@ body {
     text-align: center;
     color: #fefefe;
     font-weight: bold;
+}
+
+.table-class {
+    padding: 0;
+}
+
+.table-header-format {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #43403A ;
+}
+
+.table-data-format {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #43403A ;
+}
+
+/*TABLE */
+
+.table-class {
+    padding: 0;
+}
+
+.table-header-format {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #43403A ;
+}
+
+.table-data-format {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #43403A ;
 }
