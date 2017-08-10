@@ -49,7 +49,7 @@ $("#submit-button").on("click", function() {
 			// loop through JSON results to create unique variables/storage/populating HTML
 			results.forEach(function(result) {
 				// Saving JSON object results to variables
-				var eventImageDiv = $("<img>");
+				var eventImageDiv = $("<img class='event-image-toggled'>");
 				// var eventImage = result.logo.url;
 				if (result.logo === null) {
 					var eventImage = "https://placehold.it/400x200";
@@ -57,7 +57,7 @@ $("#submit-button").on("click", function() {
 				}
 				else {
 					var eventImage = result.logo.url;
-					eventImageDiv.attr("src", eventImage);
+					eventImageDiv.attr("src", eventImage).attr("href", "eventpage.html");
 				}
 				var eventTitle = result.name.text;
 				var eventDescription = result.description.text;
@@ -76,26 +76,31 @@ $("#submit-button").on("click", function() {
 
 				//creates dynamic div for populating results
 				var eventDiv = $("<tr class='toggle-form'>");
-				// When a result's div is clicked, that information is saved in sessionstorage to be passed onto event page
-				eventDiv.on("click", function() {
-					sessionStorage.setItem("title", eventTitle);
-					sessionStorage.setItem("description", eventDescription);
-					sessionStorage.setItem("eventstart", startEventConverted);
-					sessionStorage.setItem("eventend", endEventConverted);
-					sessionStorage.setItem("logo", eventImage);
-					sessionStorage.setItem("venue", venueName);
-					sessionStorage.setItem("latitude", venueLat);
-					sessionStorage.setItem("longitude", venueLon);
-					sessionStorage.setItem("address", venueAddress);
-					sessionStorage.setItem("organizer", organizerName);
-				})
-				// eventDiv.append(eventImageDiv);
+
+				eventDiv.append(eventImageDiv);
 				eventDiv.append("<td class= 'table-data-format' width='600'>" + eventTitle + "</td>");
 				eventDiv.append("<td class= 'table-data-format' width='150'>" + startEventConverted + "</td>");
 				eventDiv.append("<td class= 'table-data-format' width='150'>" + endEventConverted + "</td>");
 				eventDiv.append("<td class= 'table-data-format' width='300'>" + venueName + "</td>");
-				// eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
 				$(".search-results").prepend(eventDiv);
+
+				// When a result's div is clicked, that information is saved in localStorage to be passed onto event page
+				eventDiv.on("click", function() {
+					localStorage.setItem("title", eventTitle);
+					localStorage.setItem("description", eventDescription);
+					localStorage.setItem("eventstart", startEventConverted);
+					localStorage.setItem("eventend", endEventConverted);
+					localStorage.setItem("logo", eventImage);
+					localStorage.setItem("venue", venueName);
+					localStorage.setItem("latitude", venueLat);
+					localStorage.setItem("longitude", venueLon);
+					localStorage.setItem("address", venueAddress);
+					localStorage.setItem("organizer", organizerName);
+					eventImageDiv.slideToggle("slow");
+				})
+				eventImageDiv.on("click", function() {
+					window.open("eventpage.html", "_blank");
+				})
 			})
 		});
     // Clear form
