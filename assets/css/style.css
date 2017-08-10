@@ -1,6 +1,8 @@
 body {
     background-color: ;
     background-image: url("../images/wall.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
@@ -54,7 +56,7 @@ body {
     height: auto;
     background-color: transparent;
     border: 0;
-    z-index: 10;
+    z-index: 1;
 
 }
 /*HEADER*/
@@ -193,7 +195,7 @@ body {
 }
 
 .tabbed-search-content .button.search-button {
-    background: #fff;
+    background: gray;
     padding-left: 0;
     padding-right: 0;
     border-radius: 3px;
@@ -350,6 +352,7 @@ body {
 }
 
 .table-header-format {
+    background: rgba(70, 70, 70, 0.3);
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #43403A ;
@@ -359,4 +362,21 @@ body {
     padding: 5px;
     text-align: left;
     border-bottom: 1px solid #43403A ;
+}
+/*CALENDAR*/
+.ui-widget-content {
+    z-index: 10;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    margin:0;
+}
+.ui-widget.ui-widget-content {
+    border: 0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+border: 0px solid #d3d3d3;
+background:transparent;
+z-index: 2;
 }
