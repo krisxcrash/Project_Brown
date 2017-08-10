@@ -1,0 +1,104 @@
+<!-- 
+// Revisions:
+// 8/6 CJ 19:00 - Added input-distance class, commented out test results. Pagination needs implementation
+-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlWBzIrgVam85t9ZvJzyo8HqR-wIPdPY"></script>
+    <script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <title>The Event Network</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu menu-hover-lines">
+                <li class="active"><a>Project Brown</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu menu-hover-lines">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <br>
+    <div class="row column text-center" id="event-box">
+        <img src="assets/images/events.png">
+    </div>
+    <div class="row">
+        <div class="tabbed-search-content tabs-content" data-tabs-content="tabbed-search">
+            <div class="tabs-panel is-active" id="panel1">
+                <form>
+                    <div class="row">
+                        <div class="small-12 medium-2 columns">
+                            <label> Keyword
+                                <input type="text" class="form-control" name="keyword" placeholder="Any" id="input-general">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label>Venue Area
+                                <input type="text" class="form-control" name="location" placeholder="Zip/City" id="input-location">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label> Date
+                                <input type="text" class="form-control" name="min" placeholder="Start Date" id="input-start">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label><br>
+                            <input type="text" class="form-control" name="max" placeholder="End Date" id="input-end">
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns">
+                            <label>Location within:
+                                <select>
+                                    <option class="input-distance" value="5">5 miles</option>
+                                    <option class="input-distance" value="10">10 miles</option>
+                                    <option class="input-distance" value="15">15 miles</option>
+                                    <option class="input-distance" value="25">25 miles</option>
+                                    <option class="input-distance" value="50">50 miles</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="small-12 medium-2 columns"><br>
+                            <button type="submit" class="primary button expanded search-button" id="submit-button"><i class="fa fa-search"></i>Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row column">
+        <hr>
+    </div>
+    <!-- Creates the event results (fifteen results in total) -->
+    <div class="row column">
+        <p class="lead">Event Results</p>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-3 search-results">
+    </div>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="assets/javascript/logic.js">
+    </script>
+    <script src="assets/javascript/animate.js">
+    </script>
+    <script>
+    $(document).foundation();
+    </script>
+</body>
+
+</html>

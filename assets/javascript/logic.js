@@ -69,14 +69,19 @@ $("#submit-button").on("click", function() {
 				var venueAddress = result.venue.address.localized_address_display;
 				var organizerName = result.organizer.name;
 
+				//converts time from UNIX ISO 8601 to MM/DD/YY hh:mm format
+
+				var startEventConverted = moment(startEvent).format('MM/DD/YYYY hh:mm');
+				var endEventConverted = moment(endEvent).format('MM/DD/YYYY hh:mm');
+
 				//creates dynamic div for populating results
 				var eventDiv = $("<div class='column event-list'>");
 				// When a result's div is clicked, that information is saved in sessionstorage to be passed onto event page
 				eventDiv.on("click", function() {
 					sessionStorage.setItem("title", eventTitle);
 					sessionStorage.setItem("description", eventDescription);
-					sessionStorage.setItem("eventstart", startEvent);
-					sessionStorage.setItem("eventend", endEvent);
+					sessionStorage.setItem("eventstart", startEventConverted);
+					sessionStorage.setItem("eventend", endEventConverted);
 					sessionStorage.setItem("logo", eventImage);
 					sessionStorage.setItem("venue", venueName);
 					sessionStorage.setItem("latitude", venueLat);
@@ -87,8 +92,8 @@ $("#submit-button").on("click", function() {
 				eventDiv.append(eventImageDiv);
 				eventDiv.append("<p>" + eventTitle + "</p>");
 				// eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
-				eventDiv.append("<p class='event-time'>Start Time: </p><p>" + startEvent + "</p>");
-				eventDiv.append("<p class='event-time'>End Time: </p><p>" + endEvent + "</p>");
+				eventDiv.append("<p class='event-time'>Start Time: </p><p>" + startEventConverted + "</p>");
+				eventDiv.append("<p class='event-time'>End Time: </p><p>" + endEventConverted + "</p>");
 				// eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
 				eventDiv.append("<p class='event-time'>Location: </p><p>" + venueName + "</p>");
 				// eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
