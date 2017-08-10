@@ -75,7 +75,7 @@ $("#submit-button").on("click", function() {
 				var endEventConverted = moment(endEvent).format('MM/DD/YYYY hh:mm');
 
 				//creates dynamic div for populating results
-				var eventDiv = $("<div class='column event-list'>");
+				var eventDiv = $("<tr class='toggle-form'>");
 				// When a result's div is clicked, that information is saved in sessionstorage to be passed onto event page
 				eventDiv.on("click", function() {
 					sessionStorage.setItem("title", eventTitle);
@@ -89,13 +89,11 @@ $("#submit-button").on("click", function() {
 					sessionStorage.setItem("address", venueAddress);
 					sessionStorage.setItem("organizer", organizerName);
 				})
-				eventDiv.append(eventImageDiv);
-				eventDiv.append("<p>" + eventTitle + "</p>");
-				// eventDiv.append("<p class= 'description'>" + eventDescription + "</p>");
-				eventDiv.append("<p class='event-time'>Start Time: </p><p>" + startEventConverted + "</p>");
-				eventDiv.append("<p class='event-time'>End Time: </p><p>" + endEventConverted + "</p>");
-				// eventDiv.append("<h5>Organizer: </h5><h6>" + organizerName + "</h6>");
-				eventDiv.append("<p class='event-time'>Location: </p><p>" + venueName + "</p>");
+				// eventDiv.append(eventImageDiv);
+				eventDiv.append("<td class= 'table-data-format' width='600'>" + eventTitle + "</td>");
+				eventDiv.append("<td class= 'table-data-format' width='150'>" + startEventConverted + "</td>");
+				eventDiv.append("<td class= 'table-data-format' width='150'>" + endEventConverted + "</td>");
+				eventDiv.append("<td class= 'table-data-format' width='300'>" + venueName + "</td>");
 				// eventDiv.append("<h5>Address: </h5><h6>" + venueAddress + "</h6>");
 				$(".search-results").prepend(eventDiv);
 			})
