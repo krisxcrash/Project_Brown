@@ -360,3 +360,9 @@ body {
     text-align: left;
     border-bottom: 1px solid #43403A ;
 }
+
+/*Search Result Toggle*/
+.event-image-toggled {
+    display: none;
+    cursor: pointer;
+}

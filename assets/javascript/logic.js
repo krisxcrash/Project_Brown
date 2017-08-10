@@ -49,7 +49,7 @@ $("#submit-button").on("click", function() {
 			// loop through JSON results to create unique variables/storage/populating HTML
 			results.forEach(function(result) {
 				// Saving JSON object results to variables
-				var eventImageDiv = $("<img>");
+				var eventImageDiv = $("<img class='event-image-toggled'>");
 				// var eventImage = result.logo.url;
 				if (result.logo === null) {
 					var eventImage = "https://placehold.it/400x200";
@@ -57,7 +57,7 @@ $("#submit-button").on("click", function() {
 				}
 				else {
 					var eventImage = result.logo.url;
-					eventImageDiv.attr("src", eventImage);
+					eventImageDiv.attr("src", eventImage).attr("href", "eventpage.html");
 				}
 				var eventTitle = result.name.text;
 				var eventDescription = result.description.text;
@@ -76,6 +76,14 @@ $("#submit-button").on("click", function() {
 
 				//creates dynamic div for populating results
 				var eventDiv = $("<tr class='toggle-form'>");
+
+				eventDiv.append(eventImageDiv);
+				eventDiv.append("<td class= 'table-data-format' width='600'>" + eventTitle + "</td>");
+				eventDiv.append("<td class= 'table-data-format' width='150'>" + startEventConverted + "</td>");
+				eventDiv.append("<td class= 'table-data-format' width='150'>" + endEventConverted + "</td>");
+				eventDiv.append("<td class= 'table-data-format' width='300'>" + venueName + "</td>");
+				$(".search-results").prepend(eventDiv);
+
 				// When a result's div is clicked, that information is saved in localStorage to be passed onto event page
 				eventDiv.on("click", function() {
 					localStorage.setItem("title", eventTitle);
@@ -88,13 +96,11 @@ $("#submit-button").on("click", function() {
 					localStorage.setItem("longitude", venueLon);
 					localStorage.setItem("address", venueAddress);
 					localStorage.setItem("organizer", organizerName);
+					eventImageDiv.slideToggle("slow");
 				})
-				// eventDiv.append(eventImageDiv);
-				eventDiv.append("<td class= 'table-data-format' width='600'>" + eventTitle + "</td>");
-				eventDiv.append("<td class= 'table-data-format' width='150'>" + startEventConverted + "</td>");
-				eventDiv.append("<td class= 'table-data-format' width='150'>" + endEventConverted + "</td>");
-				eventDiv.append("<td class= 'table-data-format' width='300'>" + venueName + "</td>");
-				$(".search-results").prepend(eventDiv);
+				eventImageDiv.on("click", function() {
+					window.open("eventpage.html", "_blank");
+				})
 			})
 		});
     // Clear form
