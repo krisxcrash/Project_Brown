@@ -387,3 +387,28 @@ z-index: 2;
     display: none;
     cursor: pointer;
 }
+
+/*Calendar Colors*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid #423acc;
+    background: #a6c0ff;
+}
+jquery-ui.css:386
+.ui-datepicker td span, .ui-datepicker td a {
+    display: block;
+    padding: .2em;
+    text-align: right;
+    text-decoration: none;
+}
+jquery-ui.css:907
+.ui-widget-content a {
+    color: #222222;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    color: #423acc;
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+}
+

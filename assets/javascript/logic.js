@@ -117,7 +117,8 @@ $(function() {
 			.datepicker({
 				defaultDate: "+1w",
 				changeMonth: true,
-				numberOfMonths: 1
+				numberOfMonths: 2,
+				minDate:0
 		})
 		.on("change", function() {
 			to.datepicker("option", "minDate", getDate(this));
