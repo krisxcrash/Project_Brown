@@ -3,6 +3,7 @@
 // 8/11 18:50 CJ created populate function to pull from local storage
 // 8/11 20:20 CJ fixed node integration
 // 8/12 00:05 CJ finalized map integration
+// 8/12 1:25 KM updated event description in js
 
 // Set Variables
 var title = localStorage.getItem("title");
@@ -27,6 +28,7 @@ function populate() {
 	$("#event-date").html("Start: " + eventStart + "</br>" + "End: " + eventEnd);
 	$("#event-location").html(venue + "<br>" + address);
 	$("#event-organizer").html(organizer);
+	$("#event-description").html(description);
 	if (bigLogo != "undefined") {
 		$("#main-image").attr("src", bigLogo);
 	}
