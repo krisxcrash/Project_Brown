@@ -4,6 +4,7 @@
 // 8/11 20:20 CJ fixed node integration
 // 8/12 00:05 CJ finalized map integration
 // 8/12 1:25 KM updated event description in js
+// 8/12 09:47 CJ fixed subsequent map loads
 
 // Set Variables
 var title = localStorage.getItem("title");
@@ -60,11 +61,11 @@ $(document).ready(function() {
 function initMap() {
 	var origin = {lat: latitude, lng: longitude};
 	var infowindow = new google.maps.InfoWindow();
-	var service = new google.maps.places.PlacesService(map);
 	var map = new google.maps.Map(document.getElementById('map-div'), {
 		zoom: 15,
 		center: origin
 	});
+		var service = new google.maps.places.PlacesService(map);
 		var marker = new google.maps.Marker({
 		position: origin,
 		map: map,
