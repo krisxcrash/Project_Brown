@@ -65,3 +65,10 @@ $(document).ready(function() {
 		};
 	});
 });
+
+// function mapCreator() {
+// 					map = google.maps.Map(document.getElementById('map'), {
+// 						center: {lat: venueLat, lng: venueLon},
+// 						zoom: 13
+// 					});
+// 				}
