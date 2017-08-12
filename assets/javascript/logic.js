@@ -118,6 +118,7 @@ $(function() {
 				defaultDate: "+1w",
 				changeMonth: true,
 				numberOfMonths: 2,
+				// this minDate sets the minimimum date to today
 				minDate:0
 		})
 		.on("change", function() {
