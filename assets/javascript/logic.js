@@ -1,20 +1,22 @@
 // Revisions:
 // 8/6 18:00 CJ - Updated current, simplified JS
 // 8/6 19:00 CJ - Added comments, fixed Null images, retooled to "slightly" fit search-results.html
+// 8/11 17:45 CJ - Removed unnecessary formatting, commented out some code (may re-use if time)
 
 // 8/6 To DO: convert time values given to us, Re-implement form-toggling/hide on submit, search result pagination
 
-// Initialize Firebase
-var config = {
-	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
-	authDomain: "the-event-network.firebaseapp.com",
-	databaseURL: "https://the-event-network.firebaseio.com",
-	projectId: "the-event-network",
-	storageBucket: "the-event-network.appspot.com",
-	messagingSenderId: "388370003060"
-};
-firebase.initializeApp(config);
+// Currently not using Firebase - re-implement if necessary.
+// var config = {
+// 	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
+// 	authDomain: "the-event-network.firebaseapp.com",
+// 	databaseURL: "https://the-event-network.firebaseio.com",
+// 	projectId: "the-event-network",
+// 	storageBucket: "the-event-network.appspot.com",
+// 	messagingSenderId: "388370003060"
+// };
+// firebase.initializeApp(config);
 
+// Global variables (might not be necessary)
 var generalSearch = "";
 var categorySearch = "";
 var locationSearch = "";
@@ -70,7 +72,6 @@ $("#submit-button").on("click", function() {
 				var organizerName = result.organizer.name;
 
 				//converts time from UNIX ISO 8601 to MM/DD/YY hh:mm format
-
 				var startEventConverted = moment(startEvent).format('MM/DD/YYYY hh:mm');
 				var endEventConverted = moment(endEvent).format('MM/DD/YYYY hh:mm');
 
@@ -103,14 +104,11 @@ $("#submit-button").on("click", function() {
 				})
 			})
 		});
-    // Clear form
-    $('form').trigger("reset");
-    // Toggles form by clicking "Search" panel header -- Needs re-implementation
- 	//    $(".toggle-form").click(function(){
-	// 	$(".toggle-form-container").slideDown("slow");
-	// });
+	// Clear form
+	$("form").trigger("reset");
 });
 
+// jQuery UI datepicker
 $(function() {
 	var dateFormat = "mm/dd/yy",
 		from = $("#input-start")
