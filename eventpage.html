@@ -1,7 +1,8 @@
 <!-- REVISIONS
 // 8/11 CJ 18:50 added ids and classes to items that need to be populated; also available to style them in CSS
-
 // 8/11 KM 7:21 added Yelp search engine/results to bottom of page based on location pulled from event.
+// 8/12 CJ 00:05 updated maps API
+
  -->
 
 <!doctype html>
@@ -12,7 +13,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlWBzIrgVam85t9ZvJzyo8HqR-wIPdPY"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlWBzIrgVam85t9ZvJzyo8HqR-wIPdPY&libraries=places"></script>
 	<script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -81,7 +82,6 @@
     <!-- Map placeholder -->
 	<div class="row text-center" id="image-row">
 		<div class="medium-12 large-12 columns" id="map-div">
-			<img class="thumbnail" src="https://placehold.it/1200x500" id="mapImage">
 		</div>
 	</div>
 	<!-- Yelp Search Results -->
