@@ -412,3 +412,21 @@ jquery-ui.css:907
     text-align: center;
 }
 
+
+/*Event Page*/
+#event-heading {
+
+}
+
+/*Add a background image placeholder for cropped images that aren't same ratio to fit in container*/
+#main-image {
+/*    background-image: ;*/
+}
+
+.event-item-heading {
+
+}
+
+.event-item-value {
+
+}

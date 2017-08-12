@@ -1,87 +1,93 @@
+<!-- REVISIONS
+// 8/11 CJ 18:50 added ids and classes to items that need to be populated; also available to style them in CSS
+ -->
+
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlWBzIrgVam85t9ZvJzyo8HqR-wIPdPY"></script>
-    <script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <title>The Event Network</title>
-    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+	<meta charset="UTF-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlWBzIrgVam85t9ZvJzyo8HqR-wIPdPY"></script>
+	<script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<title>The Event Network</title>
+	<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="menu menu-hover-lines">
-                <li class="active"><a>Project Brown</a></li>
-            </ul>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu menu-hover-lines">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="searchresults.html">Search</a></li>
-            </ul>
-        </div>
-    </div>
-    <br>
-    <div class="row text-left">
-        <div class="medium-12 columns">
-            <h3>Your Event</h3>
-        </div>
-    </div>
-    <div class="row" id="image-row">
-        <div class="medium-6 columns">
-            <img class="thumbnail" id="main-image" src="https://placehold.it/720x360">
-        </div>
-        <div class="medium-6 large-6 columns">
-            <div class="marketing-site-features">
-                <h4 class="marketing-site-features-headline">Date</h4>
-                <p class="marketing-site-features-subheadline subheader">Event details here</p><br>
-                <div class="row">
-                    <div class="small-12 medium-3 columns">
-                        <i class="fa fa-snowflake-o" aria-hidden="true"></i>
-                        <h4 class="marketing-site-features-title">Location</h4>
-                        <p class="marketing-site-features-desc">Value</p>
-                    </div>
-                    <div class="small-12 medium-3 columns">
-                        <i class="fa fa-angellist" aria-hidden="true"></i>
-                        <h4 class="marketing-site-features-title">Price </h4>
-                        <p class="marketing-site-features-desc">Value</p>
-                    </div>
-                    <div class="small-12 medium-3 columns">
-                        <i class="fa fa-bullseye" aria-hidden="true"></i>
-                        <h4 class="marketing-site-features-title">Type</h4>
-                        <p class="marketing-site-features-desc">Value</p>
-                    </div>
-                    <div class="small-12 medium-3 columns">
-                        <i class="fa fa-battery-full" aria-hidden="true"></i>
-                        <h4 class="marketing-site-features-title">Extra</h4>
-                        <p class="marketing-site-features-desc">Value</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <div class="row text-center" id="image-row">
-        <div class="medium-12 large-12 columns" id="map-div">
-            <img class="thumbnail" src="https://placehold.it/1200x500" id="mapImage">
-        </div>
-    </div>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-    $(document).foundation();
-    </script>
-    <script src="assets/javascript/logic.js"></script>
-    <script src="assets/javascript/app.js"></script>
+    <!-- Header -->
+	<div class="top-bar">
+		<div class="top-bar-left">
+			<ul class="menu menu-hover-lines">
+				<li class="active"><a>Project Brown</a></li>
+		</ul>
+		</div>
+		<div class="top-bar-right">
+			<ul class="menu menu-hover-lines">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="searchresults.html">Search</a></li>
+			</ul>
+		</div>
+	</div>
+	<br>
+    <!-- Event Details -->
+	<div class="row text-left">
+		<div class="medium-12 columns">
+			<h3 id="event-heading"></h3>
+		</div>
+	</div>
+	<div class="row" id="image-row">
+		<div class="medium-6 columns">
+			<img class="thumbnail" id="main-image" src="https://placehold.it/720x360">
+		</div>
+		<div class="medium-6 large-6 columns">
+			<div class="marketing-site-features">
+				<h4 class="marketing-site-features-title event-item-heading">Date</h4>
+				<p class="marketing-site-features-subheadline subheader event-item-value" id="event-date">Event details here</p><br>
+				<div class="row">
+					<div class="small-12 medium-3 columns">
+						<i class="fa fa-snowflake-o" aria-hidden="true"></i>
+						<h4 class="marketing-site-features-title event-item-heading">Location</h4>
+						<p class="marketing-site-features-desc event-item-value" id="event-location"></p>
+					</div>
+					<div class="small-12 medium-3 columns">
+						<i class="fa fa-angellist" aria-hidden="true"></i>
+						<h4 class="marketing-site-features-title event-item-heading">Price </h4>
+						<p class="marketing-site-features-desc event-item-value" id="event-price"></p>
+					</div>
+					<div class="small-12 medium-3 columns">
+						<i class="fa fa-bullseye" aria-hidden="true"></i>
+						<h4 class="marketing-site-features-title event-item-heading">Type</h4>
+						<p class="marketing-site-features-desc event-item-value" id="event-type"></p>
+					</div>
+					<div class="small-12 medium-3 columns">
+						<i class="fa fa-battery-full" aria-hidden="true"></i>
+						<h4 class="marketing-site-features-title event-item-heading">Organizer</h4>
+						<p class="marketing-site-features-desc event-item-value" id="event-organizer"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+    <!-- Map placeholder -->
+	<div class="row text-center" id="image-row">
+		<div class="medium-12 large-12 columns" id="map-div">
+			<img class="thumbnail" src="https://placehold.it/1200x500" id="mapImage">
+		</div>
+	</div>
+	<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+	<script>
+	$(document).foundation();
+	</script>
+	<script src="assets/javascript/animate.js"></script>
+	<script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
