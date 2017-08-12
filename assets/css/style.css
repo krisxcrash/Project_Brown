@@ -397,6 +397,10 @@ jquery-ui.css:907
     line-height: 1.8em;
     text-align: center;
 }
+.ui-datepicker .ui-datepicker-header {
+    border: 0;
+    height: 50px;
+}
 
 /* Yelp Section - Event Page */
 
