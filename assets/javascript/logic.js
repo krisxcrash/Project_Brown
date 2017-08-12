@@ -3,21 +3,8 @@
 // 8/6 19:00 CJ - Added comments, fixed Null images, retooled to "slightly" fit search-results.html
 // 8/11 17:45 CJ - Removed unnecessary formatting, commented out some code (may re-use if time)
 // 8/11 22:00 CJ - Removed a console log, hide result table and then fade in as ajax call returns
+// 8/12 00:05 CJ - Removed unused code
 
-// 8/6 To DO: Re-implement form-toggling/hide on submit
-
-// Currently not using Firebase - re-implement if necessary.
-// var config = {
-// 	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
-// 	authDomain: "the-event-network.firebaseapp.com",
-// 	databaseURL: "https://the-event-network.firebaseio.com",
-// 	projectId: "the-event-network",
-// 	storageBucket: "the-event-network.appspot.com",
-// 	messagingSenderId: "388370003060"
-// };
-// firebase.initializeApp(config);
-
-// Global variables (might not be necessary)
 var generalSearch = "";
 var categorySearch = "";
 var locationSearch = "";
@@ -33,9 +20,6 @@ $("#submit-button").on("click", function() {
 	distanceSearch = parseInt($(".input-distance").val());
 	startDate = $("#input-start").val();
 	endDate = $("#input-end").val();
-
-	// Hides form panel on submission -- unused as of 8/6. Needs re-implementation
-	// $(".toggle-form-container").slideUp("slow");
 
 	// Converts time from our calendar to UTC for queryURL
 	var convertedStart = moment.utc(startDate).format();
@@ -67,8 +51,8 @@ $("#submit-button").on("click", function() {
 				var startEvent = result.start.local;
 				var endEvent = result.end.local;
 				var venueName = result.venue.name;
-				var venueLat = parseInt(result.venue.latitude); // Unused
-				var venueLon = parseInt(result.venue.longitude); // Unused
+				var venueLat = result.venue.latitude;
+				var venueLon = result.venue.longitude;
 				var venueAddress = result.venue.address.localized_address_display;
 				var organizerName = result.organizer.name;
 
