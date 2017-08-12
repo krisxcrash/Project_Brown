@@ -2,17 +2,7 @@
 // 8/11 17:45 CJ Using file to populate and perform functions necessary for eventpage rather than logic.js
 // 8/11 18:50 CJ created populate function to pull from local storage
 // 8/11 20:20 CJ fixed node integration
-
-
-// $('.form-floating-label input, .form-floating-label textarea').focusin(function(){
-// 	$(this).parent().addClass('has-value');
-// });
-
-// $('.form-floating-label input, .form-floating-label textarea').blur(function(){
-// 	if(!$(this).val().length > 0) {
-// 		$(this).parent().removeClass('has-value');
-// 	}
-// });
+// 8/12 00:05 CJ finalized map integration
 
 // Set Variables
 var title = localStorage.getItem("title");
@@ -21,8 +11,8 @@ var eventStart = localStorage.getItem("eventstart");
 var eventEnd = localStorage.getItem("eventend");
 var logo = localStorage.getItem("logo");
 var venue = localStorage.getItem("venue");
-var latitude = localStorage.getItem("latitude");
-var longitude = localStorage.getItem("longitude");
+var latitude = Number(localStorage.getItem("latitude"));
+var longitude = Number(localStorage.getItem("longitude"));
 var address = localStorage.getItem("address");
 var organizer = localStorage.getItem("organizer");
 var bigLogo = localStorage.getItem("biglogo");
@@ -41,8 +31,6 @@ function populate() {
 		$("#main-image").attr("src", bigLogo);
 	}
 }
-
-populate();
 
 // Yelp APi & Node.js
 $(document).ready(function() {
@@ -66,9 +54,42 @@ $(document).ready(function() {
 	});
 });
 
-// function mapCreator() {
-// 					map = google.maps.Map(document.getElementById('map'), {
-// 						center: {lat: venueLat, lng: venueLon},
-// 						zoom: 13
-// 					});
-// 				}
+// Google Map
+function initMap() {
+	var origin = {lat: latitude, lng: longitude};
+	var infowindow = new google.maps.InfoWindow();
+	var service = new google.maps.places.PlacesService(map);
+	var map = new google.maps.Map(document.getElementById('map-div'), {
+		zoom: 15,
+		center: origin
+	});
+		var marker = new google.maps.Marker({
+		position: origin,
+		map: map,
+		title: address
+	});
+	marker.addListener('click', function() {
+		map.setZoom(17);
+		map.setCenter(marker.getPosition());
+		infowindow.setContent('<div><strong>Venue: ' + venue  + '</strong></br>' + address + '</strong></br>')
+    		infowindow.open(map, this);
+	});
+	service.getDetails({
+		placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+	}, function(place, status) {
+		if (status === google.maps.places.PlacesServiceStatus.OK) {
+			var marker = new google.maps.Marker({
+				map: map,
+				position: place.geometry.location
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</div>');
+				infowindow.open(map, this);
+			});
+		}
+	});
+};
+
+// 
+populate();
+initMap();
