@@ -412,4 +412,56 @@ jquery-ui.css:907
     text-align: center;
 }
 
+<<<<<<< HEAD
 
+=======
+/* Yelp Section - Event Page */
+
+.results {
+    padding-top: 5px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    height: 330px;
+}
+
+.items {
+    display: inline-block;
+}
+
+.image-resize-div {
+  position: relative;
+  width: 250px;
+  height: 125px;
+  overflow: hidden;
+}
+.image-resize-div img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+
+
+/*Event Page*/
+#event-heading {
+
+}
+
+/*Add a background image placeholder for cropped images that aren't same ratio to fit in container*/
+#main-image {
+/*    background-image: ;*/
+}
+
+.event-item-heading {
+
+}
+
+.event-item-value {
+
+}
+>>>>>>> 181cb7f0f54f92acb7fe41814680793afd48dfde

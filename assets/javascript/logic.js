@@ -1,20 +1,22 @@
 // Revisions:
 // 8/6 18:00 CJ - Updated current, simplified JS
 // 8/6 19:00 CJ - Added comments, fixed Null images, retooled to "slightly" fit search-results.html
+// 8/11 17:45 CJ - Removed unnecessary formatting, commented out some code (may re-use if time)
 
 // 8/6 To DO: convert time values given to us, Re-implement form-toggling/hide on submit, search result pagination
 
-// Initialize Firebase
-var config = {
-	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
-	authDomain: "the-event-network.firebaseapp.com",
-	databaseURL: "https://the-event-network.firebaseio.com",
-	projectId: "the-event-network",
-	storageBucket: "the-event-network.appspot.com",
-	messagingSenderId: "388370003060"
-};
-firebase.initializeApp(config);
+// Currently not using Firebase - re-implement if necessary.
+// var config = {
+// 	apiKey: "AIzaSyDmBUkW-YBfdAME8Jo333BxYuj7FJ42K3M",
+// 	authDomain: "the-event-network.firebaseapp.com",
+// 	databaseURL: "https://the-event-network.firebaseio.com",
+// 	projectId: "the-event-network",
+// 	storageBucket: "the-event-network.appspot.com",
+// 	messagingSenderId: "388370003060"
+// };
+// firebase.initializeApp(config);
 
+// Global variables (might not be necessary)
 var generalSearch = "";
 var categorySearch = "";
 var locationSearch = "";
@@ -55,6 +57,11 @@ $("#submit-button").on("click", function() {
 					var eventImage = "https://placehold.it/400x200";
 					eventImageDiv.attr("src", "https://placehold.it/400x200");
 				}
+
+				else if (result.logo === undefined) {
+					var eventImage = "https://placehold.it/400x200";
+					eventImageDiv.attr("src", "https://placehold.it/400x200");
+				}
 				else {
 					var eventImage = result.logo.url;
 					eventImageDiv.attr("src", eventImage).attr("href", "eventpage.html");
@@ -70,7 +77,6 @@ $("#submit-button").on("click", function() {
 				var organizerName = result.organizer.name;
 
 				//converts time from UNIX ISO 8601 to MM/DD/YY hh:mm format
-
 				var startEventConverted = moment(startEvent).format('MM/DD/YYYY hh:mm');
 				var endEventConverted = moment(endEvent).format('MM/DD/YYYY hh:mm');
 
@@ -103,14 +109,11 @@ $("#submit-button").on("click", function() {
 				})
 			})
 		});
-    // Clear form
-    $('form').trigger("reset");
-    // Toggles form by clicking "Search" panel header -- Needs re-implementation
- 	//    $(".toggle-form").click(function(){
-	// 	$(".toggle-form-container").slideDown("slow");
-	// });
+	// Clear form
+	$("form").trigger("reset");
 });
 
+// jQuery UI datepicker
 $(function() {
 	var dateFormat = "mm/dd/yy",
 		from = $("#input-start")
@@ -142,6 +145,40 @@ $(function() {
 		}
 		return date;
 	}
+});
+
+// Yelp APi & Node.js
+
+	var q = "restaurants";
+	var loc = $(localStorage.getItem("address"));
+
+$(document).ready(function() {
+	var queryURL = 	"https://pure-savannah-62932.herokuapp.com/yelp/?q=" + q + "&location=" + loc + "&radius=5mi&open_now=true" 
+
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).done(function(response) {
+		var yelpResults = response.jsonBody.businesses;	
+
+		console.log(yelpResults);
+
+		for (var i = 0; i < yelpResults.length; i++) {
+			var distanceMiles = Math.round((yelpResults[i].distance * 0.000621371192)*100)/100;
+
+			console.log(yelpResults[i].location);
+
+			var yelpDiv = $("<div class='items'>")
+
+			var yelpData =  "<div class='image-resize-div'><img class='thumbnail image-resize' src='" + yelpResults[i].image_url + "' width='300'></div><h5><b>" + yelpResults[i].name + "</b></h5><p><b>Price:</b> " + yelpResults[i].price + "<br/><b>Rating:</b> " + yelpResults[i].rating + "/5<br/><b>Miles Away:</b> " + distanceMiles + "<br/><b>Phone:</b> " + yelpResults[i].display_phone +"</p><a href='" + yelpResults[i].url + "' class='button small expanded hollow yelp-link'>Take Me There</a>";
+
+			// + yelpResults[i].display_phone + "</td><td>" + yelpResults[i].location.display_address + "</td><td>" + distanceMiles +"</td>";
+
+			yelpDiv.append(yelpData);
+
+			$(".results").append(yelpDiv);
+		};
+	});
 });
 
 
