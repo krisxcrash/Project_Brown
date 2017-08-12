@@ -5,6 +5,7 @@
 // 8/12 00:05 CJ finalized map integration
 // 8/12 1:25 KM updated event description in js
 // 8/12 09:47 CJ fixed subsequent map loads
+// 8/12 10:00 CJ fixed Yelp locations
 
 // Set Variables
 var title = localStorage.getItem("title");
@@ -19,9 +20,8 @@ var address = localStorage.getItem("address");
 var organizer = localStorage.getItem("organizer");
 var bigLogo = localStorage.getItem("biglogo");
 
-// Variables for Yelp API
+// Variable for Yelp API
 var q = "restaurants";
-var loc = $(localStorage.getItem("address"));
 
 // Populate event page HTML with object values in local storage
 function populate() {
@@ -37,7 +37,7 @@ function populate() {
 
 // Yelp APi & Node.js
 $(document).ready(function() {
-	var queryURL = 	"https://pure-savannah-62932.herokuapp.com/yelp/?q=" + q + "&location=" + loc + "&radius=5mi&open_now=true";
+	var queryURL = 	"https://pure-savannah-62932.herokuapp.com/yelp/?q=" + q + "&location=" + address + "&radius=5mi&open_now=true";
 	
 	$.ajax({
 		url: queryURL,
@@ -93,6 +93,6 @@ function initMap() {
 	});
 };
 
-// 
+// Populate localStorage data on load
 populate();
 initMap();
