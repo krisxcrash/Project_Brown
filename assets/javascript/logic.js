@@ -2,8 +2,9 @@
 // 8/6 18:00 CJ - Updated current, simplified JS
 // 8/6 19:00 CJ - Added comments, fixed Null images, retooled to "slightly" fit search-results.html
 // 8/11 17:45 CJ - Removed unnecessary formatting, commented out some code (may re-use if time)
+// 8/11 22:00 CJ - Removed a console log, hide result table and then fade in as ajax call returns
 
-// 8/6 To DO: convert time values given to us, Re-implement form-toggling/hide on submit, search result pagination
+// 8/6 To DO: Re-implement form-toggling/hide on submit
 
 // Currently not using Firebase - re-implement if necessary.
 // var config = {
@@ -40,14 +41,13 @@ $("#submit-button").on("click", function() {
 	var convertedStart = moment.utc(startDate).format();
 	var convertedEnd = moment.utc(endDate).format();
 
-	var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token=PBMOFDBNG7TPGBUP7OSZ" + "&q=" + generalSearch + "&location.address=" + locationSearch + "&location.within=" + distanceSearch+"mi" + "&start_date.range_start=" + convertedStart + "&start_date.range_end=" + convertedEnd + "&expand=organizer,venue";
+	var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token=PBMOFDBNG7TPGBUP7OSZ" + "&q=" + generalSearch + "&location.address=" + locationSearch + "&location.within=" + distanceSearch+"mi" + "&start_date.range_start=" + convertedStart + "&start_date.range_end=" + convertedEnd + "&expand=organizer,venue,pagination";
 	$.ajax({
 		url: queryURL,
 		method: "GET"
 		}).done(function(response) {
 			console.log(response);
 			var results = response.events;
-			console.log(response.events);
 			// loop through JSON results to create unique variables/storage/populating HTML
 			results.forEach(function(result) {
 				// Saving JSON object results to variables
@@ -77,13 +77,15 @@ $("#submit-button").on("click", function() {
 				var venueAddress = result.venue.address.localized_address_display;
 				var organizerName = result.organizer.name;
 
-				//converts time from UNIX ISO 8601 to MM/DD/YY hh:mm format
+				// converts time from UNIX ISO 8601 to MM/DD/YY hh:mm format
 				var startEventConverted = moment(startEvent).format('MM/DD/YYYY hh:mm');
 				var endEventConverted = moment(endEvent).format('MM/DD/YYYY hh:mm');
 
-				//creates dynamic div for populating results
+				// creates dynamic div for populating results
 				var eventDiv = $("<tr class='toggle-form'>");
-
+				// Fades in JSON result table
+				$(eventDiv).hide().fadeIn(2500);
+				// Appends 
 				eventDiv.append(eventImageDiv);
 				eventDiv.append("<td class= 'table-data-format' width='600'>" + eventTitle + "</td>");
 				eventDiv.append("<td class= 'table-data-format' width='150'>" + startEventConverted + "</td>");
@@ -110,6 +112,8 @@ $("#submit-button").on("click", function() {
 					window.open("eventpage.html", "_blank");
 				})
 			})
+			// Fades in existing HTML
+			$(".event-table").fadeIn(2500);
 		});
 	// Clear form
 	$("form").trigger("reset");
@@ -149,9 +153,8 @@ $(function() {
 	}
 });
 
-// function mapCreator() {
-// 					map = google.maps.Map(document.getElementById('map'), {
-// 						center: {lat: venueLat, lng: venueLon},
-// 						zoom: 13
-// 					});
-// 				}
+// Hide HTML table (headings) on page load
+function hideTable() {
+	$(".event-table").hide();
+}
+hideTable();
