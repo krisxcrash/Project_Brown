@@ -1,7 +1,7 @@
 body {
     background-color: ;
     background-image: url("../images/wall.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
@@ -42,11 +42,6 @@ body {
     color: #63b4bf;
     transition: color 0.3s ease-in;
 }
-
-
-
-
-
 
 /*EVENT LOGO*/
 
@@ -258,8 +253,6 @@ body {
     padding: 1em 1.25em;
 }
 
-
-
 /*CENTER HOME BUTTON*/
 
 .button-hover-like {
@@ -445,16 +438,18 @@ jquery-ui.css:907
           transform: translate(-50%,-50%);
 }
 
-
-
 /*Event Page*/
 #event-heading {
 
 }
 
-/*Add a background image placeholder for cropped images that aren't same ratio to fit in container*/
+/* Background pattern from Subtle Patterns */
+/* Placeholder for poorly scaled images or non-existent images */
 #main-image {
-/*    background-image: ;*/
+    background-image: url("../images/memphis-colorful.png");
+    background-repeat: repeat;
+    height: 360px;
+    width: 720px;
 }
 
 .event-item-heading {
