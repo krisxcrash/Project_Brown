@@ -401,10 +401,14 @@ jquery-ui.css:907
 /* Yelp Section - Event Page */
 
 .results {
-    padding-top: 5px;
+    padding: 5px;
     overflow-x: scroll;
     white-space: nowrap;
-    height: 330px;
+    height: 360px;
+}
+
+.yelp-bar-format {
+    padding: 0;
 }
 
 .items {
@@ -429,8 +433,9 @@ jquery-ui.css:907
 }
 
 /*Event Page*/
-#event-heading {
-
+#desc-format {
+    background-color: #f8f8f8;   
+    margin: 0 100px;
 }
 
 /* Background pattern from Subtle Patterns */
