@@ -6,13 +6,6 @@ body {
     font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-
-#map {
-    display: block;
-    width: 50%;
-    height: 300px;
-}
-
 /*FOOTER*/
 .social-footer {
     border-top: 3px solid #000;
@@ -455,4 +448,10 @@ jquery-ui.css:907
 
 .event-item-value {
 
+}
+
+#map-div {
+    display: block;
+    width: 1200px;
+    height: 500px;
 }
