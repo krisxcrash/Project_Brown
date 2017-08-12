@@ -438,6 +438,11 @@ jquery-ui.css:907
           transform: translate(-50%,-50%);
 }
 
+#yelpSrchRow {
+
+   padding-left: 7%;
+}
+
 /*Event Page*/
 #event-heading {
 

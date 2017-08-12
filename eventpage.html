@@ -2,7 +2,7 @@
 // 8/11 CJ 18:50 added ids and classes to items that need to be populated; also available to style them in CSS
 
 // 8/11 KM 7:21 added Yelp search engine/results to bottom of page based on location pulled from event.
- -->
+-->
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -22,12 +22,12 @@
 </head>
 
 <body>
-    <!-- Header -->
+	<!-- Header -->
 	<div class="top-bar">
 		<div class="top-bar-left">
 			<ul class="menu menu-hover-lines">
 				<li class="active"><a>Project Brown</a></li>
-		</ul>
+			</ul>
 		</div>
 		<div class="top-bar-right">
 			<ul class="menu menu-hover-lines">
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<br>
-    <!-- Event Details -->
+	<!-- Event Details -->
 	<div class="row text-left">
 		<div class="medium-12 columns">
 			<h3 id="event-heading"></h3>
@@ -78,7 +78,7 @@
 	</div>
 	<br>
 	<br>
-    <!-- Map placeholder -->
+	<!-- Map placeholder -->
 	<div class="row text-center" id="image-row">
 		<div class="medium-12 large-12 columns" id="map-div">
 			<img class="thumbnail" src="https://placehold.it/1200x500" id="mapImage">
@@ -91,12 +91,16 @@
 			<img src="assets/images/Yelp_trademark_RGB.png" alt="yelp-logo" width="100px"/>
 		</div>
 	</div>
-	<!-- Yelp Data for Event Landing Page -->
-	<div class="row small-up-2 medium-up-3 large-up-6 results"></div>
+	
+<!-- Yelp Data for Event Landing Page -->
+	<div class="row" id="yelpSrchRow">		
+		<div class="row small-up-4 medium-up-6 large-up-8 results" id="yelpSrch"></div>
+	</div>
+
 	<hr>
 	<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 	<script>
-	$(document).foundation();
+		$(document).foundation();
 	</script>
 	<script src="assets/javascript/animate.js"></script>
 </body>
